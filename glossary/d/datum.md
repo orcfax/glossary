@@ -1,9 +1,9 @@
 ---
-context: https://schema.org/
-type: "DefinedTerm",
-id: "https://domain.orcfax.io/glossary/datum",
+context: "https://schema.org/"
+type: "DefinedTerm"
+id: "https://domain.orcfax.io/glossary/datum"
 name: "datum"
-description: "...the definition...",
+description: "...the definition..."
 inDefinedTermSet: "https://domain.orcfax.io/glossary/"
 ---
 
