@@ -1,1 +1,0 @@
-https://openstax.org/details/books/introduction-philosophy
