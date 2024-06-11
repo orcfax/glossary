@@ -1,15 +1,17 @@
-# C
+# Orcfax glossary
+
+## C
 
 [Cardano](terms/cardano.md)
 
-# D
+## D
 
 [domain](terms/domain.md)
 
-# O
+## O
 
 [oracle](terms/oracle.md)
 
-# R
+## R
 
 [real world](terms/real-world.md)
