@@ -1,6 +1,6 @@
 # Orcfax Glossary
 
-This glossary contains terms and definitions for the entities and concepts in the Orcfax domain.
+This [glossary](glossary.md) contains terms and definitions for the entities and concepts in the Orcfax domain.
 
 Orcfax is an oracle software system that publishes data about real-world events to the Cardano blockchain network.
 
@@ -18,23 +18,4 @@ The Orcfax docs site contains more detailed [explainer](https://docs.orcfax.io) 
 ## To recommend a new term
 ...
 
-
-
---------
-
-# C
-
-[Cardano](terms/cardano.md)
-
-# D
-
-[domain](terms/domain.md)
-
-# O
-
-[oracle](terms/oracle.md)
-
-# R
-
-[real world](terms/real-world.md)
-
+## Use the [glossary](glossary.md)
