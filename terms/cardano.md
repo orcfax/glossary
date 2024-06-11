@@ -11,6 +11,3 @@ Ouroboros divides time into epochs and slots. Each slot has a leader responsible
 ADA is Cardano's native token. Stakeholders can delegate their ADA to staking pools to participate in the consensus process and earn rewards.
 
 Cardano uses a Haskell-based language called Plutus to program smart contracts.
-
-
-
