@@ -1,2 +1,0 @@
-# Oracle
-A technical primitive in blockchain networks that collects, validates and publishes data about external events to blockchain smart contracts. This enables them to execute their programmed logic based upon triggers and data from the real world.
