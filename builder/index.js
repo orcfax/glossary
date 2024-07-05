@@ -319,7 +319,7 @@ function page(content) {
       "@type": "CreativeWork",
       "additionalType": "Glossary",
       "name": "Orcfax Glossary",
-      "description": "This glossary contains terms and definitions for the entities and concepts in the Orcfax domain. Orcfax is an oracle software system that publishes data about real-world events to the Cardano blockchain network. This glossary is reference documentation that is intended to guide Orcfax design and development. That means the glossary terms must be comprehensive, unambigous, as well as semantically and logically consistent with all other terms in the glossary.",
+      "description": "This glossary contains terms and definitions for the entities and concepts in the Orcfax domain. Orcfax is an oracle software system that publishes data about real-world events to the Cardano blockchain network. This glossary is reference documentation that is intended to guide Orcfax design and development. That means the glossary terms must be comprehensive, unambiguous, as well as semantically and logically consistent with all other terms in the glossary.",
       "author": {
         "@type": "Organization",
         "name": "Orcfax development team"

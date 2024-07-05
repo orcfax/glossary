@@ -22,5 +22,4 @@ repos:
   rev: 'v9.6.0'  # Use the sha / tag you want to point at
   hooks:
   - id: eslint
-    args: [--config, builder/eslint.config.mjxxs]
-    files: \.js$
+    args: [--config, builder/eslint.config.mjs]
