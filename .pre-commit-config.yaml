@@ -17,9 +17,9 @@ repos:
   rev: v2.3.0
   hooks:
   - id: codespell
-    args: [--config, project.toml]
+    args: [--config, .codespellrc]
 - repo: https://github.com/pre-commit/mirrors-eslint
-  rev: 'v9.6.0'  # Use the sha / tag you want to point at
+  rev: 'v9.6.0'
   hooks:
   - id: eslint
     args: [--config, builder/eslint.config.mjs]
