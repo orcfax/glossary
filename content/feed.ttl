@@ -1,0 +1,10 @@
+@prefix : <http://glossary.orcfax.io/#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+:feed
+    skos:prefLabel "feed"@en;
+    skos:definition ''' 
+      A data pipeline handling time series data.
+      The term is also used to refer to the output of a feed.
+    ''' ;
+    skos:example :price-feed ;
+    skos:related :feed-id .

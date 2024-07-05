@@ -1,0 +1,7 @@
+@prefix : <http://glossary.orcfax.io/#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+:itn
+    skos:prefLabel "ITN"@en;
+    skos:definition ''' 
+    A phased program of iterative design and ground-truthing using the resources of licensed Orcfax validators.
+    ''' .

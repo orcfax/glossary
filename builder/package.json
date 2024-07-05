@@ -1,0 +1,20 @@
+{
+  "name": "builder",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "run": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^12.1.0",
+    "n3": "^1.17.4"
+  },
+  "devDependencies": {
+    "turtle-language-server": "^3.5.0"
+  }
+}

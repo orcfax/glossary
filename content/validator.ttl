@@ -1,0 +1,10 @@
+@prefix : <http://glossary.orcfax.io/#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+:validator
+    skos:prefLabel "validator"@en;
+    skos:definition ''' 
+    Short for Orcfax validator node.
+    A validator is a member of the #consensus mechanism for Orcfax.
+    Not to be confused with a Plutus validation script which, 
+    when the context is sufficiently clear, may also be refered to as a validator.
+    ''' .

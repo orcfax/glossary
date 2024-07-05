@@ -1,0 +1,8 @@
+@prefix : <http://glossary.orcfax.io/#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+:integrator
+    skos:prefLabel "integrator"@en;
+    skos:definition ''' 
+    A developer that builds the use of Orcfax datum into their smart contract and transactions.
+    related term: consumer, someone who might read the output of an Orcfax datum but not necessarily integrate it, see integrator.
+    ''' .

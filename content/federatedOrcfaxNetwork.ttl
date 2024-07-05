@@ -1,0 +1,7 @@
+@prefix : <http://glossary.orcfax.io/#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+:federatedOrcfaxNetwork
+    skos:prefLabel "federate Orcfax network"@en;
+    skos:definition ''' 
+    Early Orcfax network that decentralized collecting of currency pair data and published validated collector data through a central validator and publisher hosted by Orcfax.
+    ''' .
