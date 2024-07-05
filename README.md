@@ -37,3 +37,23 @@ This glossary is [reference](https://diataxis.fr/reference/) documentation that 
 That means the glossary terms must be comprehensive, unambigous, as well as semantically and logically consistent with all other terms in the glossary.
 
 The Orcfax docs site contains more detailed [explainer](https://docs.orcfax.io) documentation that is better meant for stakeholders to understand Orcfax concepts and objectives.
+
+## Setup 
+
+### Dependencies
+
+- [nodejs](https://nodejs.org/en) - the builder is a nodejs script.
+- [just](https://github.com/casey/just) - "handy way to save and run project-specific commands"
+- [pre-commit](https://pre-commit.com/) 
+
+If you use nix, there is a flake with these as part of the dev shell.
+
+### Just setup 
+
+Use the `just` tool to run the common commands.
+```sh
+just
+```
+Will provide help output. Further suggestions are found there.  
+
+### 

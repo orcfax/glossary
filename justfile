@@ -1,15 +1,26 @@
 ROOT := `git rev-parse --show-toplevel`
 
-help:  # default
+# Get help
+help:
   just -l 
 
-list-dependencies:
-  echo "Manual list of dependencies:"
-  echo "just, nodejs, pnpm"
-  echo "Make sure these are installed"
+# Run on FIRST USE
+setup:
+  cd {{ROOT}}/builder; npm i # install builder dependencies
+  pre-commit install --install-hooks # uninstall: `pre-commit uninstall`
 
-install-builder:
-  cd {{ROOT}}/builder; pnpm i
-
+# (Re-)build the glossary
 build: 
   node {{ROOT}}/builder/index.js --input ./content > {{ROOT}}/docs/index.html
+
+# Run all pre-commit checks
+all-checks:
+  pre-commit run --all-files
+
+# Run pre-commit spelling check
+spell: 
+  pre-commit run codespell --all-files
+
+# Run pre-commit makdown-lint
+markdown: 
+  pre-commit run markdownlint --all-files

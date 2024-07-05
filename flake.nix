@@ -29,6 +29,14 @@
           };
 
           devShells.default =
+            let 
+            npm = pkgs.writeShellScriptBin "npm" 
+            ''
+            #!/usr/bin/env bash
+            # aliases not supported by direnv. Hence this
+            pnpm $@
+            '';
+            in 
           pkgs.mkShell {
             nativeBuildInputs = [
               config.treefmt.build.wrapper
@@ -37,13 +45,15 @@
             shellHook = ''
               echo 1>&2 "Welcome to the development shell!"
             '';
-            name = "mutx-dev";
-            packages = with pkgs; [
-              just
-              nodePackages_latest.nodejs
-              nodePackages_latest.pnpm
-              nodePackages_latest.typescript-language-server
-              nodePackages_latest.prettier
+            name = "glossary-devshell";
+            packages = [
+              npm # Must appear above nodejs
+              pkgs.pre-commit
+              pkgs.just
+              pkgs.nodePackages_latest.nodejs
+              pkgs.nodePackages_latest.pnpm
+              pkgs.nodePackages_latest.typescript-language-server
+              pkgs.nodePackages_latest.prettier
             ];
           };
         };
