@@ -25,7 +25,7 @@
    * broader term
    * narrower term
    * related term
-  
+
 # About
 This [glossary](https://glossary.orcfax.io) contains terms and definitions for the entities and concepts in the Orcfax domain.
 
@@ -34,26 +34,26 @@ Orcfax is an oracle software system that publishes data about real-world events 
 ![Orcfax domain](assets/orcfax-concept-june2024.png)
 
 This glossary is [reference](https://diataxis.fr/reference/) documentation that is intended to guide Orcfax design and development.
-That means the glossary terms must be comprehensive, unambigous, as well as semantically and logically consistent with all other terms in the glossary.
+That means the glossary terms must be comprehensive, unambiguous, as well as semantically and logically consistent with all other terms in the glossary.
 
 The Orcfax docs site contains more detailed [explainer](https://docs.orcfax.io) documentation that is better meant for stakeholders to understand Orcfax concepts and objectives.
 
-## Setup 
+## Setup
 
 ### Dependencies
 
 - [nodejs](https://nodejs.org/en) - the builder is a nodejs script.
 - [just](https://github.com/casey/just) - "handy way to save and run project-specific commands"
-- [pre-commit](https://pre-commit.com/) 
+- [pre-commit](https://pre-commit.com/)
 
 If you use nix, there is a flake with these as part of the dev shell.
 
-### Just setup 
+### Just setup
 
 Use the `just` tool to run the common commands.
 ```sh
 just
 ```
-Will provide help output. Further suggestions are found there.  
+Will provide help output. Further suggestions are found there.
 
-### 
+###

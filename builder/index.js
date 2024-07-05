@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 
-const fs = require("fs");
-const path = require("path");
-const commander = require("commander");
-const N3 = require('n3');
+import { readFileSync, promises } from "fs";
+import { basename, join } from "path";
+import * as commander from "commander";
+import { Parser } from 'n3';
+import process from 'process';
 
 const { Command } = commander
 
@@ -18,12 +19,17 @@ function cli() {
 
 async function app() {
   let opts = cli().opts();
-  const parser = new N3.Parser();
-  entities = {}
+  const parser = new Parser();
+  const entities = {}
   for await (const fp of walk(opts.input)) {
-    entities[path.basename(fp, '.ttl')] = parseTtl(parser, fp)
+    try {
+      entities[basename(fp, '.ttl')] = parseTtl(parser, fp)
+    } catch (err) {
+      console.error(`ERROR IN THE FILE : ${fp}`)
+      throw err
+    }
   }
-  content = Object.entries(entities)
+  const content = Object.entries(entities)
   content.sort((x,y) =>  x[0].toLowerCase() > y[0].toLowerCase() ? 1 : -1 )
   return page(content.map(tup => Concept.fromQuads(tup[0], tup[1]).emit()))
 }
@@ -39,16 +45,16 @@ class Concept {
     this._name = name
     this._prefLabel = prefLabel
     this._definition = definition
-    this._additional = additional 
+    this._additional = additional
   }
   static fromQuads(name, quads) {
     const prefLabelQuad = quads.find(PrefLabel.isQuad)
     const definitionQuad = quads.find(Definition.isQuad)
     const skosQuads = quads.filter(AdditionalSkos.isQuad)
     return new Concept(
-      name, 
-      PrefLabel.fromQuad(prefLabelQuad), 
-      Definition.fromQuad(definitionQuad), 
+      name,
+      PrefLabel.fromQuad(prefLabelQuad),
+      Definition.fromQuad(definitionQuad),
       skosQuads.map(AdditionalSkos.fromQuad),
     )
   }
@@ -83,7 +89,7 @@ class PrefLabel {
 
   static fromQuad(quad) {
     const body = quad.object.value
-    const lang = quad.object.lang 
+    const lang = quad.object.lang
     return new PrefLabel(body, lang)
   }
 
@@ -118,7 +124,7 @@ class Definition {
 
   static fromQuad(quad) {
     const body = quad.object.value
-    const lang = quad.object.lang 
+    const lang = quad.object.lang
     return new Definition(body, lang)
   }
 
@@ -149,7 +155,7 @@ class AdditionalSkos {
   }
 
   static isQuad(quad) {
-    return quad.predicate.id.startsWith(SKOS_PREFIX) && 
+    return quad.predicate.id.startsWith(SKOS_PREFIX) &&
         (!PrefLabel.isQuad(quad)) &&
         (!Definition.isQuad(quad))
   }
@@ -157,7 +163,7 @@ class AdditionalSkos {
   static fromQuad(quad) {
     const label = quad.predicate.value.split("#")[1]
     const body = quad.object.value
-    const lang = quad.object.lang 
+    const lang = quad.object.lang
     return new AdditionalSkos(label, body, lang)
   }
 
@@ -178,15 +184,15 @@ class AdditionalSkos {
 }
 
 function parseTtl(parser, fp) {
-  return parser.parse(fs.readFileSync(fp, 'utf8'))
-} 
+  return parser.parse(readFileSync(fp, 'utf8'))
+}
 
 function attrOne2Str(tup) {
   return `${tup[0]}="${tup[1].toString()}"`
 }
 
 function attr2Str(attr) {
-  return Object.entries(attr).map(attrOne2Str).join(" ") 
+  return Object.entries(attr).map(attrOne2Str).join(" ")
 }
 
 function elem(tag) {
@@ -201,8 +207,8 @@ const dt = elem("dt")
 const dd = elem("dd")
 
 async function* walk(dir) {
-  for await (const d of await fs.promises.opendir(dir)) {
-    const entry = path.join(dir, d.name);
+  for await (const d of await promises.opendir(dir)) {
+    const entry = join(dir, d.name);
     if (d.isDirectory()) yield* walk(entry);
     else if (d.isFile()) yield entry;
   }
@@ -284,7 +290,7 @@ function page(content) {
 
         .content-wrapper {
             background-color: #ffffff;
-            border: 1px solid #dee2e6; 
+            border: 1px solid #dee2e6;
             border-radius: 0.5rem;
             padding: 2rem;
             box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
@@ -338,7 +344,7 @@ function page(content) {
             <h1 class="text-center mb-4">Orcfax Glossary</h1>
             <p class="text-center">This glossary contains terms and definitions for the entities and concepts in the <a href="https://orcfax.io">Orcfax</a> domain.</p>
             <p class="text-center"><a href="https://github.com/orcfax/glossary">How to contribute</a></p>
-            <hr>        
+            <hr>
             <dl class="row">
               ${content.join("\n\n")}
             </dl>

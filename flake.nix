@@ -29,14 +29,6 @@
           };
 
           devShells.default =
-            let 
-            npm = pkgs.writeShellScriptBin "npm" 
-            ''
-            #!/usr/bin/env bash
-            # aliases not supported by direnv. Hence this
-            pnpm $@
-            '';
-            in 
           pkgs.mkShell {
             nativeBuildInputs = [
               config.treefmt.build.wrapper
@@ -47,7 +39,6 @@
             '';
             name = "glossary-devshell";
             packages = [
-              npm # Must appear above nodejs
               pkgs.pre-commit
               pkgs.just
               pkgs.nodePackages_latest.nodejs

@@ -1,7 +1,7 @@
 @prefix : <http://glossary.orcfax.io/#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-:transaction 
+:transaction
     skos:prefLabel "transaction"@en;
-    skos:definition ''' 
-      The fundemental operation for evolving the state of a blockchain.
+    skos:definition '''
+      The fundamental operation for evolving the state of a blockchain.
     ''' .

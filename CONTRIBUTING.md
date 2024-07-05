@@ -2,21 +2,21 @@
 
 ## Overview
 
-The glossary is collections 
+The glossary is collections
 
-## Style guide 
+## Style guide
 
-Definitions are recorded in turtle format. 
+Definitions are recorded in turtle format.
 
-One definition per file. 
+One definition per file.
 
 In certain places, use the camel case names.
-Treat acronyms, such as `HTTP` or `JSON`, as single words. 
-Thus the camel case of HTTP exceptions is `httpException` and not `HTTPException`. 
+Treat acronyms, such as `HTTP` or `JSON`, as single words.
+Thus the camel case of HTTP exceptions is `httpException` and not `HTTPException`.
 
 Files are named `<camelCaseName>.ttl`.
 
-Each turtle file must include the two prefixes as follows 
+Each turtle file must include the two prefixes as follows
 
 ```ttl
 @prefix : <http://glossary.orcfax.io/#> .
@@ -35,10 +35,10 @@ Open a new file `/content/<camelCaseName>.ttl`.
 
 Use a template (`/templates/*`)
 or copy the content of another definition file
-to bring in the correct prefixes. 
+to bring in the correct prefixes.
 
-Add the new definition. 
+Add the new definition.
 
-Rebuild the site. 
+Rebuild the site.
 
 Submit a PR.

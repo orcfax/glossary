@@ -2,6 +2,6 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 :arweave
     skos:prefLabel "arweave"@en;
-    skos:definition ''' 
+    skos:definition '''
       A decentralized (layer-zero) storage network that provides replication of data over hundreds of Arweave nodes and is funded by the Ar token.
     '''@en .

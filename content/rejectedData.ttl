@@ -2,6 +2,6 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 :rejectedData
     skos:prefLabel "rejected-data"@en;
-    skos:definition ''' 
+    skos:definition '''
     Data that was received by an Orcfax validator but rejected as it did not have all of the properties required to satisfy the consensus algorithm, e.g. its content signature did not match what was received or the median could not be accurately re-calculated or its timestamp was > 180 seconds.
     ''' .

@@ -2,6 +2,6 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 :triangulation
     skos:prefLabel "triangulation"@en;
-    skos:definition ''' 
+    skos:definition '''
       Determination of a single data point from multiple sources, e.g. the median value of five central exchange results for ADA-USD is a triangulated value.
     ''' .

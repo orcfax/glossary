@@ -1,7 +1,7 @@
 @prefix : <http://glossary.orcfax.io/#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-:collectorNode 
+:collectorNode
     skos:prefLabel "collector-node"@en;
-    skos:definition ''' 
+    skos:definition '''
        A hosted set of scripts that aggregates and signs the currency-pair output of an orcfax CEX or CNT collector.
     ''' .

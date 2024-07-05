@@ -2,7 +2,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 :heartbeat
     skos:prefLabel "heartbeat"@en;
-    skos:definition ''' 
+    skos:definition '''
     Interval at which a datum is published on-chain.
     ''' ;
     skos:note '''

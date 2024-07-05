@@ -1,10 +1,9 @@
 @prefix : <http://glossary.orcfax.io/#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-:feedId 
+:feedId
     skos:prefLabel "feed id"@en;
-    skos:definition ''' 
-      The id of feed. 
-      It is constructed as `<#feed-type>/<#feed-name>`.
-      It can be exteneded to a versioned feed id.
-    ''' ;
-    skos:editorialNote "investigate what is happening with the content of angled brackets".
+    skos:definition '''
+      The id of feed.
+      It is constructed as `{{feed-type}}/{{feed-name}}`.
+      It can be extended to a versioned feed id.
+    ''' .

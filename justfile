@@ -1,16 +1,18 @@
 ROOT := `git rev-parse --show-toplevel`
 
+xnpm := `[[ $(command -v pnpm) ]] && echo "pnpm" || echo "npm"`
+
 # Get help
 help:
-  just -l 
+  just -l
 
 # Run on FIRST USE
 setup:
-  cd {{ROOT}}/builder; npm i # install builder dependencies
+  cd {{ROOT}}/builder; {{xnpm}} i # install builder dependencies
   pre-commit install --install-hooks # uninstall: `pre-commit uninstall`
 
 # (Re-)build the glossary
-build: 
+build:
   node {{ROOT}}/builder/index.js --input ./content > {{ROOT}}/docs/index.html
 
 # Run all pre-commit checks
@@ -18,9 +20,9 @@ all-checks:
   pre-commit run --all-files
 
 # Run pre-commit spelling check
-spell: 
+spell:
   pre-commit run codespell --all-files
 
 # Run pre-commit makdown-lint
-markdown: 
+markdown:
   pre-commit run markdownlint --all-files
