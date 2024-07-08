@@ -1,6 +1,8 @@
 ROOT := `git rev-parse --show-toplevel`
 
-xnpm := `[[ $(command -v pnpm) ]] && echo "pnpm" || echo "npm"`
+xnpm := `[ $(command -v pnpm) ] && echo "pnpm" || echo "npm"`
+
+md := `git ls-files '*.md'`
 
 # Get help
 help:
@@ -11,9 +13,16 @@ setup:
   cd {{ROOT}}/builder; {{xnpm}} i # install builder dependencies
   pre-commit install --install-hooks # uninstall: `pre-commit uninstall`
 
+
+
+# (Re-)build the glossary
+lint-markdown:
+  prettier ./**/*.md --write --print-width 80 --prose-wrap always
+  for x in "{{md}}"; do markdownlint --fix $x; done
+
 # (Re-)build the glossary
 build:
-  node {{ROOT}}/builder/index.js --input ./content > {{ROOT}}/docs/index.html
+  node {{ROOT}}/builder/index.js --input {{ROOT}}content > {{ROOT}}/docs/index.html
 
 # Run all pre-commit checks
 all-checks:

@@ -39,6 +39,7 @@
             '';
             name = "glossary-devshell";
             packages = [
+              pkgs.markdownlint-cli
               pkgs.pre-commit
               pkgs.just
               pkgs.nodePackages_latest.nodejs
