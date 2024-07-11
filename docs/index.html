@@ -162,6 +162,14 @@ A decentralized digital archive and permanent storage solution.
       It can be extended to a versioned feed id.
     </dd></div>
 
+<div class="term-container" id="feedName" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">feed name</dt> <dd class="col-12" lang="en" property="skos:definition">
+      An identifier of a feed within a feed type,
+      although without very good reason is selected to globally unique.
+      Together with the feed type, the feed name determines the feed id.
+      A short uppercased list of ASCII characters is preferred, for example `ADA-USD`.
+      Each feed type will have its own naming convention.
+    </dd></div>
+
 <div class="term-container" id="feedType" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">feed type</dt> <dd class="col-12" lang="en" property="skos:definition">
       Each feed has exactly one feed type.
       Feed types group feeds to semantically similar sets.
@@ -198,7 +206,7 @@ A decentralized digital archive and permanent storage solution.
     An NFT that allows individuals to trustlessly verify their right to participate in the Orcfax network and which is used to verify the authenticity of a participant on the Orcfax network by Orcfax tooling.
     </dd></div>
 
-<div class="term-container" id="rejectedData" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">rejected-data</dt> <dd class="col-12" lang="en" property="skos:definition">
+<div class="term-container" id="rejectedData" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">rejected data</dt> <dd class="col-12" lang="en" property="skos:definition">
     Data that was received by an Orcfax validator but rejected as it did not have all of the properties required to satisfy the consensus algorithm, e.g. its content signature did not match what was received or the median could not be accurately re-calculated or its timestamp was > 180 seconds.
     </dd></div>
 
