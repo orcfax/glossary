@@ -7,6 +7,9 @@ The glossary is an html page built from the collection of [turtle][ttl-1] files.
 The builder, found in `./builder`, is written in node.
 
 The turtle files follow [SKOS][skos-1].
+The turtle files require a bit of getting used to.
+If you have suggestions on editor support,
+add them here.
 
 [skos-1]: https://www.w3.org/TR/skos-primer/
 [ttl-1]: https://www.w3.org/TR/turtle/
