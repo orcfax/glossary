@@ -4,9 +4,13 @@ import { readFileSync, promises } from "fs";
 import { basename, join } from "path";
 import * as commander from "commander";
 import { Parser } from 'n3';
+import * as marked from 'marked';
 import process from 'process';
 
 const { Command } = commander
+
+const BASE_URL = 'http://glossary.orcfax.io/#'
+const SKOS_PREFIX = "http://www.w3.org/2004/02/skos/core"
 
 function cli() {
   let program = new Command()
@@ -31,31 +35,34 @@ async function app() {
   }
   const content = Object.entries(entities)
   content.sort((x,y) =>  x[0].toLowerCase() > y[0].toLowerCase() ? 1 : -1 )
-  return page(content.map(tup => Concept.fromQuads(tup[0], tup[1]).emit()))
+  return htmlPage(content.map(tup => Concept.fromQuads(tup[0], tup[1]).html()))
 }
 
-const SKOS_PREFIX = "http://www.w3.org/2004/02/skos/core"
 
 class Concept {
   _name
   _prefLabel
   _definition
+  _related
   _additional
-  constructor(name, prefLabel, definition, additional) {
+  constructor(name, prefLabel, definition, related, additional) {
     this._name = name
     this._prefLabel = prefLabel
     this._definition = definition
+    this._related = related
     this._additional = additional
   }
   static fromQuads(name, quads) {
     const prefLabelQuad = quads.find(PrefLabel.isQuad)
     const definitionQuad = quads.find(Definition.isQuad)
-    const skosQuads = quads.filter(AdditionalSkos.isQuad)
+    const relatedQuads = quads.filter(Related.isQuad)
+    const additionalQuads = quads.filter(AdditionalSkos.isQuad)
     return new Concept(
       name,
       PrefLabel.fromQuad(prefLabelQuad),
       Definition.fromQuad(definitionQuad),
-      skosQuads.map(AdditionalSkos.fromQuad),
+      relatedQuads.map(Related.fromQuad),
+      additionalQuads.map(AdditionalSkos.fromQuad),
     )
   }
   attr() {
@@ -65,12 +72,18 @@ class Concept {
       typeof:"skos:Concept",
     }
   }
-  emit () {
+  html () {
     return div(
       this.attr(), [
-        this._prefLabel.emit(),
-        this._definition.emit(),
-      ].concat(this._additional.map(x => x.emit())))
+        this._prefLabel.html(),
+        this._definition.html(),
+      ].concat(
+          this._related.map(x => x.html())
+        ).concat(
+          this._additional.map(x => x.html())
+
+        )
+    )
   }
 }
 
@@ -100,7 +113,7 @@ class PrefLabel {
       property:"skos:prefLabel",
     }
   }
-  emit () {
+  html () {
     return dt(
       this.attr(), [
         this._body,
@@ -135,10 +148,54 @@ class Definition {
       property:"skos:definition",
     }
   }
-  emit () {
+
+  md() {
+    return marked.parse(this._body.split('\n').map(x => x.trim()).join('\n '))
+  }
+  html () {
     return dd(
       this.attr(), [
-        this._body,
+        this.md(),
+        ]
+    )
+  }
+}
+
+class Related {
+  static label="related"
+  _target
+  _label
+
+  constructor(target, label) {
+    this._target = target
+    this._label = label
+  }
+
+  static isQuad(quad) {
+    return quad.predicate.id == `${SKOS_PREFIX}#${Related.label}`
+  }
+
+  static fromQuad(quad) {
+    const body = quad.object.value
+    if (body.startsWith(BASE_URL)) {
+      const target = `#${body.split('#')[1]}` // Hack
+      return new Related(target, target)
+    }
+    const s = body.split('/')
+    return new Related(body, s[s.length - 1])
+  }
+
+  attr() {
+    return {
+      class:"col-12 mt" ,
+      lang: (this._lang ? this._lang : "en"),
+      property:`skos:related`,
+    }
+  }
+  html () {
+    return dd(
+      this.attr(), [
+        a({ href : this._target}, this._label),
         ]
     )
   }
@@ -157,6 +214,7 @@ class AdditionalSkos {
   static isQuad(quad) {
     return quad.predicate.id.startsWith(SKOS_PREFIX) &&
         (!PrefLabel.isQuad(quad)) &&
+        (!Related.isQuad(quad)) &&
         (!Definition.isQuad(quad))
   }
 
@@ -174,7 +232,7 @@ class AdditionalSkos {
       property:`skos:${this._label}`,
     }
   }
-  emit () {
+  html () {
     return dd(
       this.attr(), [
         this._body,
@@ -205,6 +263,7 @@ function elem(tag) {
 const div = elem("div")
 const dt = elem("dt")
 const dd = elem("dd")
+const a = elem("a")
 
 async function* walk(dir) {
   for await (const d of await promises.opendir(dir)) {
@@ -228,7 +287,7 @@ async function main() {
   process.exitCode = 0;
 }
 
-function page(content) {
+function htmlPage(content) {
   return `
 <!DOCTYPE html>
 <html lang="en">
@@ -310,6 +369,10 @@ function page(content) {
 
         dt[property="skos:prefLabel"] {
             font-weight: bold;
+        }
+
+        .red {
+          color: red;
         }
 
     </style>

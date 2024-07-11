@@ -1,8 +1,7 @@
 ---
 name: Orcfax glossary entry
 about:
-    "This template is used to propose new terms and revisions for existing
-    terms. "
+  "This template is used to propose new terms and revisions for existing terms. "
 title: ""
 labels: proposed
 assignees: ""

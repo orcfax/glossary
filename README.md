@@ -3,39 +3,39 @@
 ## Revise existing glossary term
 
 - To make a comment or revision suggestion to an existing term, find its
-    corresponding [Issue](https://github.com/orcfax/glossary/issues) in this
-    Github repo.
+  corresponding [Issue](https://github.com/orcfax/glossary/issues) in this
+  Github repo.
 - Each term has its own Issue with the term as the title.
 - Search for your term and add your comments and revision suggestions.
-- Check that there is not an existing Issue for this term that has been
-    closed, if so, re-open the issue and add your comments.
+- Check that there is not an existing Issue for this term that has been closed,
+  if so, re-open the issue and add your comments.
 - Change the label to "revision"
 - Ping other repo members for review of your comment or revision request.
 - Once consensus is reached, the current version of the
-    [glossary file](https://github.com/orcfax/glossary/blob/main/docs/index.html)
-    can be updated by the repo owner. The repo branch protection requires
-    updates via Pull Request with approval from one reviewer.
+  [glossary file](https://github.com/orcfax/glossary/blob/main/docs/index.html)
+  can be updated by the repo owner. The repo branch protection requires updates
+  via Pull Request with approval from one reviewer.
 
 ## Add new glossary term
 
 - To add a new term to the glossary, create a new
-    [Issue](https://github.com/orcfax/glossary/issues) in this Github repo.
-- Create an Issue with the term's preferred label as the only text in the
-    Issue title.
+  [Issue](https://github.com/orcfax/glossary/issues) in this Github repo.
+- Create an Issue with the term's preferred label as the only text in the Issue
+  title.
 - Add the label "proposed"
 - In the Issue's comment section add your proposed definitions and/or comments
-    about the new term.
+  about the new term.
 - Ping other repo members for review of your comment or revision request.
 - Once consensus is reached, the current version of the
-    [glossary file](https://github.com/orcfax/glossary/blob/main/docs/index.html)
-    can be updated by the repo owner. The repo branch protection requires
-    updates via Pull Request with approval from one reviewer.
+  [glossary file](https://github.com/orcfax/glossary/blob/main/docs/index.html)
+  can be updated by the repo owner. The repo branch protection requires updates
+  via Pull Request with approval from one reviewer.
 
 ## Glossary fields
 
 - This glossary is marked up using the
-    [SKOS](https://www.w3.org/TR/skos-primer/) ontology. You can propose values
-    for the following SKOS properties:
+  [SKOS](https://www.w3.org/TR/skos-primer/) ontology. You can propose values
+  for the following SKOS properties:
   - preferred label
   - definition
   - alternate label
@@ -68,7 +68,7 @@ concepts and objectives.
 
 - [nodejs](https://nodejs.org/en) - the builder is a nodejs script.
 - [just](https://github.com/casey/just) - "handy way to save and run
-    project-specific commands"
+  project-specific commands"
 - [pre-commit](https://pre-commit.com/)
 
 If you use nix, there is a flake with these as part of the dev shell.

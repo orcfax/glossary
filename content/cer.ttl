@@ -5,8 +5,9 @@
     skos:definition '''
       The feed type representing Currency Exchange Rate feeds.
       This includes the feeds ADA-USD and FACT-ADA.
-      <br>
-      <strong>Naming convention</strong>.
+
+      ### Naming convention
+
       For a feed of CER type, the feed name naming convention is `{{cur-a}}-{{curr-b}}`,
       where the ordering follows the forex convention of 'base currency second'.
       Currency names of fiat follow ISO 4217.
@@ -17,4 +18,5 @@
       Beyond this, there is not yet precedence.
       Currency names should stripped of `/` and any non-standard characters.
       Ordering will be fleshed out as it arises.
-    ''' .
+    ''' ;
+    skos:related :forex .
