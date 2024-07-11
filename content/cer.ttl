@@ -1,0 +1,11 @@
+@prefix : <http://glossary.orcfax.io/#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+:cer
+    skos:prefLabel "CER"@en;
+    skos:definition '''
+      The feed type representing Currency Exchange Rate feeds.
+      This includes the feeds ADA-USD and FACT-ADA.
+      For a feed of CER type, the feed name naming convention is 'base currency second'.
+      For example: for the case of crypto-fiat `ADA-USD`; crypto-stable `ADA-iUSD`; crypto-base and other native asset `FACT-ADA`.
+      Beyond this, there is not yet precedence on ordering.
+    ''' .
