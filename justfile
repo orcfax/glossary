@@ -22,7 +22,7 @@ lint-markdown:
 
 # (Re-)build the glossary
 build:
-  node {{ROOT}}/builder/index.js --input {{ROOT}}content > {{ROOT}}/docs/index.html
+  node {{ROOT}}/builder/index.js --input {{ROOT}}/content > {{ROOT}}/docs/index.html
 
 # Run all pre-commit checks
 all-checks:

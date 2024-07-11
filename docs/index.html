@@ -88,7 +88,7 @@
       "@type": "CreativeWork",
       "additionalType": "Glossary",
       "name": "Orcfax Glossary",
-      "description": "This glossary contains terms and definitions for the entities and concepts in the Orcfax domain. Orcfax is an oracle software system that publishes data about real-world events to the Cardano blockchain network. This glossary is reference documentation that is intended to guide Orcfax design and development. That means the glossary terms must be comprehensive, unambigous, as well as semantically and logically consistent with all other terms in the glossary.",
+      "description": "This glossary contains terms and definitions for the entities and concepts in the Orcfax domain. Orcfax is an oracle software system that publishes data about real-world events to the Cardano blockchain network. This glossary is reference documentation that is intended to guide Orcfax design and development. That means the glossary terms must be comprehensive, unambiguous, as well as semantically and logically consistent with all other terms in the glossary.",
       "author": {
         "@type": "Organization",
         "name": "Orcfax development team"
@@ -115,7 +115,7 @@
             <p class="text-center"><a href="https://github.com/orcfax/glossary">How to contribute</a></p>
             <hr>
             <dl class="row">
-              <div class="term-container" id="arkly" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">arkley</dt> <dd class="col-12" lang="en" property="skos:definition">
+              <div class="term-container" id="arkly" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">arkly</dt> <dd class="col-12" lang="en" property="skos:definition">
 A decentralized digital archive and permanent storage solution.
     </dd></div>
 
@@ -162,6 +162,15 @@ A decentralized digital archive and permanent storage solution.
       It can be extended to a versioned feed id.
     </dd></div>
 
+<div class="term-container" id="feedType" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">feed type</dt> <dd class="col-12" lang="en" property="skos:definition">
+      Each feed has exactly one feed type.
+      Feed types group feeds to semantically similar sets.
+      Two feeds of the same type will share statement body datatypes, and have the same visualisations etc.
+      For example the feed type `CER`, the Currency Exchange Rate feeds, includes the feeds ADA-USD and FACT-ADA.
+      Each feed type has short, uppercased, label (eg `CER`).
+      This appears as the first part of  the feed id.
+    </dd></div>
+
 <div class="term-container" id="forex" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">forex</dt> <dd class="col-12" lang="en" property="skos:definition">
     The domain from which terminology about trading, and information about trading mechanisms for currencies is adopted.
     </dd> <dd class="col-12 alt-label" lang="en" property="skos:note">
@@ -185,7 +194,7 @@ A decentralized digital archive and permanent storage solution.
     A phased program of iterative design and ground-truthing using the resources of licensed Orcfax validators.
     </dd></div>
 
-<div class="term-container" id="licenceNft" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">licenceNft</dt> <dd class="col-12" lang="en" property="skos:definition">
+<div class="term-container" id="licenceNft" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">licence NFT</dt> <dd class="col-12" lang="en" property="skos:definition">
     An NFT that allows individuals to trustlessly verify their right to participate in the Orcfax network and which is used to verify the authenticity of a participant on the Orcfax network by Orcfax tooling.
     </dd></div>
 
@@ -216,6 +225,12 @@ A decentralized digital archive and permanent storage solution.
     A validator is a member of the #consensus mechanism for Orcfax.
     Not to be confused with a Plutus validation script which,
     when the context is sufficiently clear, may also be referred to as a validator.
+    </dd></div>
+
+<div class="term-container" id="versionedFeedId" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">versioned feed id</dt> <dd class="col-12" lang="en" property="skos:definition">
+      It is the extension of the feed id to contain version information.
+      It is constructed as `{{feed-id}}/{{feed-version}}`
+      or equivalently `{{feed-type}}/{{feed-name}}/{{feed-version}}`.
     </dd></div>
             </dl>
         </div>
