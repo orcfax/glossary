@@ -4,7 +4,7 @@
     skos:prefLabel "feed name"@en;
     skos:definition '''
       An identifier of a feed within a feed type,
-      although without very good reason is selected to globally unique.
+      and is selected to globally unique.
       Together with the feed type, the feed name determines the feed id.
       A short uppercased list of ASCII characters is preferred, for example `ADA-USD`.
       Each feed type will have its own naming convention.

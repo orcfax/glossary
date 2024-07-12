@@ -138,10 +138,10 @@
  This includes the feeds ADA-USD and FACT-ADA.</p>
 <h3>Naming convention</h3>
 <p> For a feed of CER type, the feed name naming convention is <code>{{cur-a}}-{{curr-b}}</code>,
- where the ordering follows the forex convention of &#39;base currency second&#39;.
+ where the ordering follows the forex convention of &#39;base currency second&#39; (see <a href="./#baseQuote">base-quote</a>).
  Currency names of fiat follow ISO 4217.
- For crypto base currencies, we defer to how it appears on CExs.
- For cardano native tokens, we defer to how it appears on the main DExs.
+ For crypto base currencies, we defer to how it appears on CEXs.
+ For cardano native tokens, we defer to how it appears on the main DEXs.
  For example: for the case of crypto-fiat <code>ADA-USD</code>; crypto-stable <code>ADA-iUSD</code>; crypto-base and other native asset <code>FACT-ADA</code>.</p>
 <p> Beyond this, there is not yet precedence.
  Currency names should stripped of <code>/</code> and any non-standard characters.
@@ -149,7 +149,8 @@
  </p>
 </dd> <dd class="col-12 mt" lang="en" property="skos:related"><a href="#forex">#forex</a></dd></div>
 
-<div class="term-container" id="collectorNode" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">collector-node</dt> <dd class="col-12" lang="en" property="skos:definition"><p> A hosted set of scripts that aggregates and signs the currency-pair output of an orcfax CEX or CNT collector.
+<div class="term-container" id="collectorNode" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">collector-node</dt> <dd class="col-12" lang="en" property="skos:definition"><p> A hosted set of scripts that aggregates and signs the currency-pair output of an Orcfax
+ CEX or CNT collector.
  </p>
 </dd></div>
 
@@ -167,7 +168,7 @@
 <div class="term-container" id="domain" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">domain</dt> <dd class="col-12" lang="en" property="skos:definition"><p>A domain is the targeted subject area for a software-intensive system. It is the sphere of knowledge and activity around which the software&#39;s processes, rules, and data revolves</p>
 </dd></div>
 
-<div class="term-container" id="federatedOrcfaxNetwork" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">federate Orcfax network</dt> <dd class="col-12" lang="en" property="skos:definition"><p> Early Orcfax network that decentralized collecting of currency pair data and published validated collector data through a central validator and publisher hosted by Orcfax.
+<div class="term-container" id="federatedOrcfaxNetwork" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">federated Orcfax network</dt> <dd class="col-12" lang="en" property="skos:definition"><p> Early Orcfax network that decentralized collecting of currency pair data and published validated collector data through a central validator and publisher hosted by Orcfax.
  </p>
 </dd></div>
 
@@ -183,7 +184,7 @@
 </dd></div>
 
 <div class="term-container" id="feedName" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">feed name</dt> <dd class="col-12" lang="en" property="skos:definition"><p> An identifier of a feed within a feed type,
- although without very good reason is selected to globally unique.
+ and is selected to globally unique.
  Together with the feed type, the feed name determines the feed id.
  A short uppercased list of ASCII characters is preferred, for example <code>ADA-USD</code>.
  Each feed type will have its own naming convention.
@@ -226,7 +227,10 @@
  </p>
 </dd></div>
 
-<div class="term-container" id="rejectedData" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">rejected data</dt> <dd class="col-12" lang="en" property="skos:definition"><p> Data that was received by an Orcfax validator but rejected as it did not have all of the properties required to satisfy the consensus algorithm, e.g. its content signature did not match what was received or the median could not be accurately re-calculated or its timestamp was &gt; 180 seconds.
+<div class="term-container" id="rejectedData" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">rejected data</dt> <dd class="col-12" lang="en" property="skos:definition"><p> Data that was received by an Orcfax validator but rejected as it did not have all
+ of the properties required to satisfy the consensus algorithm,
+ e.g. its content signature did not match what was received or the median could
+ not be accurately re-calculated or its timestamp was &gt; 80 seconds.
  </p>
 </dd></div>
 
@@ -247,7 +251,7 @@
 </dd></div>
 
 <div class="term-container" id="validator" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">validator</dt> <dd class="col-12" lang="en" property="skos:definition"><p> Short for Orcfax validator node.
- A validator is a member of the #consensus mechanism for Orcfax.
+ A validator is a member of the consensus mechanism for Orcfax.
  Not to be confused with a Plutus validation script which,
  when the context is sufficiently clear, may also be referred to as a validator.
  </p>

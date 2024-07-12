@@ -9,10 +9,10 @@
       ### Naming convention
 
       For a feed of CER type, the feed name naming convention is `{{cur-a}}-{{curr-b}}`,
-      where the ordering follows the forex convention of 'base currency second'.
+      where the ordering follows the forex convention of 'base currency second' (see [base-quote](./#baseQuote)).
       Currency names of fiat follow ISO 4217.
-      For crypto base currencies, we defer to how it appears on CExs.
-      For cardano native tokens, we defer to how it appears on the main DExs.
+      For crypto base currencies, we defer to how it appears on CEXs.
+      For cardano native tokens, we defer to how it appears on the main DEXs.
       For example: for the case of crypto-fiat `ADA-USD`; crypto-stable `ADA-iUSD`; crypto-base and other native asset `FACT-ADA`.
 
       Beyond this, there is not yet precedence.
