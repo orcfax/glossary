@@ -1,0 +1,25 @@
+{
+  "name": "builder",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "run": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^12.1.0",
+    "marked": "^13.0.2",
+    "n3": "^1.17.4"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.6.0",
+    "eslint": "9.x",
+    "globals": "^15.8.0",
+    "turtle-language-server": "^3.5.0"
+  }
+}

@@ -1,0 +1,11 @@
+@prefix : <http://glossary.orcfax.io/#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+:baseQuote
+    skos:prefLabel "base-quote"@en;
+    skos:definition '''
+      Describes a currency exchange rate.
+      For one $BASE a user needs n-$QUOTE.
+    ''' ;
+    skos:note: '''
+      <a href="https://tradenation.com/en-bs/articles/base-currency-and-quote-currency/">Ref</a>
+    '''.

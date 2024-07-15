@@ -1,0 +1,14 @@
+@prefix : <http://glossary.orcfax.io/#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+:forex
+    skos:prefLabel "forex"@en;
+    skos:definition '''
+    The domain from which terminology about trading, and information about trading mechanisms for currencies is adopted.
+    ''' ;
+    skos:note '''
+    References:
+    <a href="https://zondacrypto.com/en/helpdesk/zondacrypto-exchange/beginner/bitcoin-and-forex-market-differences">1</a>,
+    <a href="https://tradenation.com/en-bs/articles/base-currency-and-quote-currency/">2</a>
+    ''';
+    skos:related :fiatCurrency;
+    skos:related :cryptoCurrency .
