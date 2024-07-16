@@ -1,0 +1,10 @@
+@prefix : <http://glossary.orcfax.io/#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+:heartbeat
+    skos:prefLabel "heartbeat"@en;
+    skos:definition '''
+    Interval at which a datum is published on-chain.
+    ''' ;
+    skos:note '''
+    <a href="https://github.com/orcfax/issues/issues/103#issuecomment-1941452885">Link</a>
+    ''' .

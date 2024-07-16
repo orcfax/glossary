@@ -1,0 +1,9 @@
+@prefix : <http://glossary.orcfax.io/#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+:versionedFeedId
+    skos:prefLabel "versioned feed id"@en;
+    skos:definition '''
+      It is the extension of the feed id to contain version information.
+      It is constructed as `{{feed-id}}/{{feed-version}}`
+      or equivalently `{{feed-type}}/{{feed-name}}/{{feed-version}}`.
+    ''' .
