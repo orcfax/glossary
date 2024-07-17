@@ -1,0 +1,15 @@
+@prefix : <http://glossary.orcfax.io/#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+:dex
+    skos:prefLabel "DEX"@en;
+    skos:altLabel "decentralized exchange";
+    skos:broader "forex";
+    skos:related "CEX";
+    skos:definition '''
+      Non-custodial platforms built on blockchain networks which
+      allow peer-to-peer transactions between users, enabling
+      them to buy, sell, and swap assets without a intermediary.
+    ''' ;
+    skos:note: '''
+      <a href="https://www.emurgo.io/press-news/defi-basics-decentralized-exchanges-dex/">Ref</a>
+    ''' .
