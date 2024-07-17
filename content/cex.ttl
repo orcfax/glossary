@@ -1,0 +1,19 @@
+@prefix : <http://glossary.orcfax.io/#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+:cex
+    skos:prefLabel "CEX"@en;
+    skos:altLabel "centralized exchange";
+    skos:broader "forex";
+    skos:related "DEX";
+    skos:definition '''
+      Custodial platforms which grant users the ability to buy,
+      sell, and swap assets.
+
+      As private companies, CEXs manage all transactions, set
+      exchange rules and fees, and are subject to the laws and
+      regulations of every jurisdiction within which they
+      operate.
+    ''' ;
+    skos:note: '''
+      <a href="https://www.bitcoin.com/get-started/what-is-a-cex">Ref</a>
+    ''' .
