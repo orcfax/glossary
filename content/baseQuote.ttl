@@ -2,6 +2,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 :baseQuote
     skos:prefLabel "base-quote"@en;
+    skos:related "forex";
     skos:definition '''
       Describes a currency exchange rate.
       For one $BASE a user needs n-$QUOTE.
