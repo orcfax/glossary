@@ -5,6 +5,11 @@
     skos:related "forex";
     skos:definition '''
       Describes a currency exchange rate.
+
+      In forex, currencies are traded in pairs. The first in the
+      pair is referred to as the base currency while the second
+      is referred to as the quote currency.
+
       For one $BASE a user needs n-$QUOTE.
     ''' ;
     skos:note: '''
