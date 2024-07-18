@@ -1,13 +1,19 @@
 @prefix : <http://glossary.orcfax.io/#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 :utxo
-    skos:prefLabel "utxo"@en;
+    skos:prefLabel "UTXO"@en;
     skos:definition '''
       Short for unspent transaction output.
-      It is a fundamental entity in utxo accounting blockchains such as Cardano.
+      It is a fundamental entity in UTXO accounting blockchains
+      such as Cardano.
 
-      In a utxo accounting blockchain, a transaction specifies which utxos are input (ie spent) and defines new output utxos.
-      To be a legitimate transactions all input utxos must have not been spent by another transaction.
+      In a UTXO accounting blockchain, a transaction specifies
+      which UTXOs are input (ie spent) and defines new output
+      UTXOs.
 
-      Apart from the genesis utxo, all utxos are the output or previous transactions.
+      To be a legitimate transactions all input UTXOs must have
+      not been spent by another transaction.
+
+      Apart from the genesis UTXO, all UTXOs are the output of
+      previous transactions.
     ''' .
