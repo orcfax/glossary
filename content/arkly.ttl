@@ -3,5 +3,6 @@
 :arkly
     skos:prefLabel "arkly"@en;
     skos:definition '''
-A decentralized digital archive and permanent storage solution.
+      A next-generation decentralized digital archives
+      management platform and permanent storage solution.
     ''' .
