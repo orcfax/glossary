@@ -2,8 +2,14 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 :feedId
     skos:prefLabel "feed id"@en;
+    skos:related "versionedFeedId";
     skos:definition '''
-      The id of feed.
-      It is constructed as `{{feed-type}}/{{feed-name}}`.
-      It can be extended to a versioned feed id.
+      The unique id of feed.
+
+      It is constructed as `{{feed-type}}/{{feed-name}}`
+
+      Example: `cer/ada-usd`
+
+      The unique ID can also be extended to a
+      [versioned feed id](versionedFeedId).
     ''' .
