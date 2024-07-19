@@ -119,35 +119,63 @@
             <p class="text-center"><a href="https://github.com/orcfax/glossary">How to contribute</a></p>
             <hr>
             <dl class="row">
-              <div class="term-container" id="arkly" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">arkly</dt> <dd class="col-12" lang="en" property="skos:definition"><p> A decentralized digital archive and permanent storage solution.
+              <div class="term-container" id="arkly" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">arkly</dt> <dd class="col-12" lang="en" property="skos:definition"><p> A next-generation decentralized digital archives
+ management platform and permanent storage solution.
  </p>
 </dd></div>
 
-<div class="term-container" id="arweave" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">arweave</dt> <dd class="col-12" lang="en" property="skos:definition"><p> A decentralized (layer-zero) storage network that provides replication of data over hundreds of Arweave nodes and is funded by the Ar token.
- </p>
-</dd></div>
-
-<div class="term-container" id="baseQuote" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">base-quote</dt> <dd class="col-12" lang="en" property="skos:definition"><p> Describes a currency exchange rate.
- For one $BASE a user needs n-$QUOTE.
+<div class="term-container" id="arweave" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">arweave</dt> <dd class="col-12" lang="en" property="skos:definition"><p> A decentralized (layer-zero) storage network that provides
+ replication of data over hundreds of Arweave nodes and is
+ funded by the Ar token.</p>
+<p> The network provides an innovative, one-time endowment
+ model that claims to fund the storage of a minimum 40
+ copies of each user file for at least 200 years.
  </p>
 </dd> <dd class="col-12 alt-label" lang="en" property="skos:note:">
+    <a href="https://2hsfyi4t5fiqdcanybdez4e4admrjeqghts22viz7uuo3d5k2nna.arweave.net/0eRcI5PpUQGIDcBGTPCcANkUkgY85a1VGf0o7Y-q01o/#/en/storage-endowment">Ref</a>
+    </dd></div>
+
+<div class="term-container" id="baseQuote" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">base-quote</dt> <dd class="col-12" lang="en" property="skos:definition"><p> Describes a currency exchange rate.</p>
+<p> In forex, currencies are traded in pairs. The first in the
+ pair is referred to as the base currency while the second
+ is referred to as the quote currency.</p>
+<p> For one $BASE a user needs n-$QUOTE.
+ </p>
+</dd> <dd class="col-12 mt" lang="en" property="skos:related"><a href="forex">forex</a></dd> <dd class="col-12 alt-label" lang="en" property="skos:note:">
       <a href="https://tradenation.com/en-bs/articles/base-currency-and-quote-currency/">Ref</a>
     </dd></div>
 
 <div class="term-container" id="cer" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">CER</dt> <dd class="col-12" lang="en" property="skos:definition"><p> The feed type representing Currency Exchange Rate feeds.
- This includes the feeds ADA-USD and FACT-ADA.</p>
+ This includes feeds such as ADA-USD and FACT-ADA.</p>
 <h3>Naming convention</h3>
-<p> For a feed of CER type, the feed name naming convention is <code>{{cur-a}}-{{curr-b}}</code>,
- where the ordering follows the forex convention of &#39;base currency second&#39; (see <a href="#baseQuote">base-quote</a>).
- Currency names of fiat follow ISO 4217.
- For crypto base currencies, we defer to how it appears on CEXs.
- For cardano native tokens, we defer to how it appears on the main DEXs.
- For example: for the case of crypto-fiat <code>ADA-USD</code>; crypto-stable <code>ADA-iUSD</code>; crypto-base and other native asset <code>FACT-ADA</code>.</p>
-<p> Beyond this, there is not yet precedence.
- Currency names should stripped of <code>/</code> and any non-standard characters.
- Ordering will be fleshed out as it arises.
- </p>
+<p> For a feed of CER type, the naming convention is
+ <code>{{base-currency}}-{{quote-currency}}</code> and ordering
+ follows forex convention (see <a href="#baseQuote">base-quote</a>).</p>
+<p> Fiat currency names follow ISO 4217.</p>
+<p> Currency names are stripped of <code>/</code> and any non-standard
+ characters.</p>
+<p> For crypto base currencies, ordering defers to how the
+ pairs appear on CEXs.</p>
+<p> For cardano native tokens, ordering defers to how pairs
+ appear on DEXs.</p>
+<p> Examples</p>
+<ul>
+<li>crypto-fiat: <code>ADA-USD</code></li>
+<li>crypto-stable: <code>ADA-iUSD</code></li>
+<li>crypto and another native asset: <code>FACT-ADA</code></li>
+</ul>
 </dd> <dd class="col-12 mt" lang="en" property="skos:related"><a href="#forex">#forex</a></dd></div>
+
+<div class="term-container" id="cex" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">CEX</dt> <dd class="col-12" lang="en" property="skos:definition"><p> Custodial platforms which grant users the ability to buy,
+ sell, and swap assets.</p>
+<p> As private companies, CEXs manage all transactions, set
+ exchange rules and fees, and are subject to the laws and
+ regulations of every jurisdiction within which they
+ operate.
+ </p>
+</dd> <dd class="col-12 mt" lang="en" property="skos:related"><a href="DEX">DEX</a></dd> <dd class="col-12 alt-label" lang="en" property="skos:altLabel">centralized exchange</dd> <dd class="col-12 alt-label" lang="en" property="skos:broader">forex</dd> <dd class="col-12 alt-label" lang="en" property="skos:note:">
+      <a href="https://www.bitcoin.com/get-started/what-is-a-cex">Ref</a>
+    </dd></div>
 
 <div class="term-container" id="collectorNode" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">collector-node</dt> <dd class="col-12" lang="en" property="skos:definition"><p> A hosted set of scripts that aggregates and signs the currency-pair output of an Orcfax
  CEX or CNT collector.
@@ -164,6 +192,14 @@
  This is automatic in the case that the datum was inlined when the utxo was created.
  </p>
 </dd></div>
+
+<div class="term-container" id="dex" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">DEX</dt> <dd class="col-12" lang="en" property="skos:definition"><p> Non-custodial platforms built on blockchain networks which
+ allow peer-to-peer transactions between users, enabling
+ them to buy, sell, and swap assets without a intermediary.
+ </p>
+</dd> <dd class="col-12 mt" lang="en" property="skos:related"><a href="CEX">CEX</a></dd> <dd class="col-12 alt-label" lang="en" property="skos:altLabel">decentralized exchange</dd> <dd class="col-12 alt-label" lang="en" property="skos:broader">forex</dd> <dd class="col-12 alt-label" lang="en" property="skos:note:">
+      <a href="https://www.emurgo.io/press-news/defi-basics-decentralized-exchanges-dex/">Ref</a>
+    </dd></div>
 
 <div class="term-container" id="domain" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">domain</dt> <dd class="col-12" lang="en" property="skos:definition"><p>A domain is the targeted subject area for a software-intensive system. It is the sphere of knowledge and activity around which the software&#39;s processes, rules, and data revolves</p>
 </dd></div>
@@ -242,11 +278,16 @@
  </p>
 </dd></div>
 
-<div class="term-container" id="utxo" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">utxo</dt> <dd class="col-12" lang="en" property="skos:definition"><p> Short for unspent transaction output.
- It is a fundamental entity in utxo accounting blockchains such as Cardano.</p>
-<p> In a utxo accounting blockchain, a transaction specifies which utxos are input (ie spent) and defines new output utxos.
- To be a legitimate transactions all input utxos must have not been spent by another transaction.</p>
-<p> Apart from the genesis utxo, all utxos are the output or previous transactions.
+<div class="term-container" id="utxo" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">UTXO</dt> <dd class="col-12" lang="en" property="skos:definition"><p> Short for unspent transaction output.
+ It is a fundamental entity in UTXO accounting blockchains
+ such as Cardano.</p>
+<p> In a UTXO accounting blockchain, a transaction specifies
+ which UTXOs are input (ie spent) and defines new output
+ UTXOs.</p>
+<p> To be a legitimate transactions all input UTXOs must have
+ not been spent by another transaction.</p>
+<p> Apart from the genesis UTXO, all UTXOs are the output of
+ previous transactions.
  </p>
 </dd></div>
 
