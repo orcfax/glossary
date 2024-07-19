@@ -2,6 +2,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 :cer
     skos:prefLabel "CER"@en;
+    skos:broader "feed";
     skos:related :forex;
     skos:definition '''
       The feed type representing Currency Exchange Rate feeds.
