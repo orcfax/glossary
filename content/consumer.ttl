@@ -2,7 +2,8 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 :consumer
     skos:prefLabel "consumer"@en;
+    skos:related :integrator
     skos:definition '''
-    Someone who might read the output of an Orcfax datum but not necessarily integrate it, see integrator.
-    ''' ;
-    skos:related :integrator.
+    Someone who might read the output of an Orcfax datum but not
+    necessarily integrate it, see [integrator](#integrator).
+    ''' .
