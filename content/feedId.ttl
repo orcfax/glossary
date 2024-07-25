@@ -1,15 +1,14 @@
 @prefix : <http://glossary.orcfax.io/#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 :feedId
-    skos:prefLabel "feed id"@en;
+    skos:prefLabel "feed ID"@en;
     skos:definition '''
-      The unique id of feed.
+      The unique ID of a feed which is constructed as
+      `{{feed-type}}/{{feed-name}}`
 
-      It is constructed as `{{feed-type}}/{{feed-name}}`
+      Example: `CER/ADA-USD`
 
-      Example: `cer/ada-usd`
-
-      The unique ID can also be extended to a
-      [versioned feed id](versionedFeedId).
+      The ID can also be extended to a
+      [versioned feed ID](versionedFeedId).
     ''' ;
     skos:related "versionedFeedId".

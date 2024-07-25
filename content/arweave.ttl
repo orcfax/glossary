@@ -7,10 +7,10 @@
       replication of data over hundreds of Arweave nodes and is
       funded by the Ar token.
 
-      The network provides an innovative, one-time endowment
-      model that claims to fund the storage of a minimum 40
-      copies of each user file for at least 200 years.
+      The network provides a one-time endowment model that
+      claims to fund the storage of a minimum 40 copies of each
+      user file.
     ''' ;
     skos:note: '''
-    <a href="https://2hsfyi4t5fiqdcanybdez4e4admrjeqghts22viz7uuo3d5k2nna.arweave.net/0eRcI5PpUQGIDcBGTPCcANkUkgY85a1VGf0o7Y-q01o/#/en/storage-endowment">Ref</a>
+      <a href="https://2hsfyi4t5fiqdcanybdez4e4admrjeqghts22viz7uuo3d5k2nna.arweave.net/0eRcI5PpUQGIDcBGTPCcANkUkgY85a1VGf0o7Y-q01o/#/en/storage-endowment">Ref</a>
     ''' .

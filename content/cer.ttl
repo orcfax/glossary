@@ -27,6 +27,10 @@
       * crypto-fiat: `ADA-USD`
       * crypto-stable: `ADA-iUSD`
       * crypto and another native asset: `FACT-ADA`
+
+      Beyond this, there is not yet precedence.
+      Additional conventions regarding ordering will be fleshed
+      out as the need arises.
     ''' ;
     skos:broader "feed";
     skos:related "forex".
