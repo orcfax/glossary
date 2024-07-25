@@ -3,7 +3,10 @@
 :versionedFeedId
     skos:prefLabel "versioned feed id"@en;
     skos:definition '''
-      It is the extension of the feed id to contain version information.
+      The extension of the feed id to contain version
+      information.
+
       It is constructed as `{{feed-id}}/{{feed-version}}`
-      or equivalently `{{feed-type}}/{{feed-name}}/{{feed-version}}`.
+      or equivalently
+      `{{feed-type}}/{{feed-name}}/{{feed-version}}`.
     ''' .

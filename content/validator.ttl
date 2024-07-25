@@ -3,8 +3,9 @@
 :validator
     skos:prefLabel "validator"@en;
     skos:definition '''
-    Short for Orcfax validator node.
-    A validator is a member of the consensus mechanism for Orcfax.
-    Not to be confused with a Plutus validation script which,
-    when the context is sufficiently clear, may also be referred to as a validator.
+      Short for Orcfax validator node. A validator is a member
+      of the consensus mechanism for Orcfax. Not to be confused
+      with a Plutus validation script which, when the context is
+      sufficiently clear, may also be referred to as a
+      validator.
     ''' .
