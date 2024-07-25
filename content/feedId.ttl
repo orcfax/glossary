@@ -9,6 +9,6 @@
       Example: `CER/ADA-USD`
 
       The ID can also be extended to a
-      [versioned feed ID](versionedFeedId).
+      [versioned feed ID](#versionedFeedId).
     ''' ;
     skos:related "versionedFeedId".
