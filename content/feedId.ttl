@@ -2,7 +2,6 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 :feedId
     skos:prefLabel "feed id"@en;
-    skos:related "versionedFeedId";
     skos:definition '''
       The unique id of feed.
 
@@ -12,4 +11,5 @@
 
       The unique ID can also be extended to a
       [versioned feed id](versionedFeedId).
-    ''' .
+    ''' ;
+    skos:related "versionedFeedId".

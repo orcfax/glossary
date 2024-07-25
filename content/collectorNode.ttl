@@ -3,7 +3,6 @@
 :collectorNode
     skos:prefLabel "collector-node"@en;
     skos:definition '''
-       A hosted set of scripts that aggregates and signs the
-       [CER](#cer) output of an Orcfax CEX or CNT collector.
-#       Should cexCollector and cntCollector be defined (or collectors)? The above introduces them as distinct things.
+      A hosted set of scripts that aggregates and signs the
+      [CER](#cer) output of an Orcfax CEX or CNT collector.
     ''' .

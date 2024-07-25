@@ -11,6 +11,6 @@
       model that claims to fund the storage of a minimum 40
       copies of each user file for at least 200 years.
     ''' ;
-      skos:note: '''
+    skos:note: '''
     <a href="https://2hsfyi4t5fiqdcanybdez4e4admrjeqghts22viz7uuo3d5k2nna.arweave.net/0eRcI5PpUQGIDcBGTPCcANkUkgY85a1VGf0o7Y-q01o/#/en/storage-endowment">Ref</a>
     ''' .

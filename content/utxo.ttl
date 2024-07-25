@@ -3,15 +3,12 @@
 :utxo
     skos:prefLabel "UTXO"@en;
     skos:definition '''
-      Short for unspent transaction output.
-      It is a fundamental entity in UTXO accounting blockchains
-      such as Cardano.
+      Short for unspent transaction output, it is a fundamental
+      entity in UTXO accounting blockchains such as Cardano. In
+      such blockchains, a transaction specifies which UTXOs are
+      input (ie spent) and defines new output UTXOs.
 
-      In a UTXO accounting blockchain, a transaction specifies
-      which UTXOs are input (ie spent) and defines new output
-      UTXOs.
-
-      To be a legitimate transactions all input UTXOs must have
+      To be a legitimate transaction all input UTXOs must have
       not been spent by another transaction.
 
       Apart from the genesis UTXO, all UTXOs are the output of

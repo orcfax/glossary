@@ -3,10 +3,16 @@
 :feedType
     skos:prefLabel "feed type"@en;
     skos:definition '''
-      Each feed has exactly one feed type.
-      Feed types group feeds to semantically similar sets.
-      Two feeds of the same type will share statement body datatypes, and have the same visualisations etc.
-      For example the feed type `CER`, the Currency Exchange Rate feeds, includes the feeds ADA-USD and FACT-ADA.
+      Each feed has exactly one feed type, which are used to
+      group feeds into semantically similar sets.
+
+      Two feeds of the same type will share statement body
+      datatypes, and have the same visualisations etc.
+
+      For example, the feed type `CER`
+      (Currency Exchange Rate feeds) includes the feeds ADA-USD
+      and FACT-ADA.
+
       Each feed type has short, uppercased, label (eg `CER`).
       This appears as the first part of  the feed id.
     ''' .

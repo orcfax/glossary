@@ -3,5 +3,6 @@
 :transaction
     skos:prefLabel "transaction"@en;
     skos:definition '''
-      The fundamental operation for evolving the state of a blockchain.
+      The fundamental operation for evolving the state of a
+      blockchain.
     ''' .

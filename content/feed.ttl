@@ -2,10 +2,9 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 :feed
     skos:prefLabel "feed"@en;
-    skos:related "feedId";
     skos:definition '''
       A data pipeline handling time series data.
 
       The term is also used to refer to the output of a feed.
-#      Seems like we should make a distinction between feed and its output (eg feedData?)
-    ''' .
+    ''' ;
+    skos:related "feedId".

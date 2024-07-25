@@ -3,5 +3,10 @@
 :triangulation
     skos:prefLabel "triangulation"@en;
     skos:definition '''
-      Determination of a single data point from multiple sources, e.g. the median value of five central exchange results for ADA-USD is a triangulated value.
+      The determination of a single data point from a minimum of
+      three sources.
+
+      Example
+      * the median value of five central exchange results for
+      ADA-USD constitutes a triangulated value.
     ''' .

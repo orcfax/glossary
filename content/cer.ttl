@@ -2,8 +2,6 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 :cer
     skos:prefLabel "CER"@en;
-    skos:broader "feed";
-    skos:related :forex;
     skos:definition '''
       The feed type representing Currency Exchange Rate feeds.
       This includes feeds such as ADA-USD and FACT-ADA.
@@ -29,4 +27,6 @@
       * crypto-fiat: `ADA-USD`
       * crypto-stable: `ADA-iUSD`
       * crypto and another native asset: `FACT-ADA`
-    ''' .
+    ''' ;
+    skos:broader "feed";
+    skos:related "forex".
