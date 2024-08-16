@@ -3,12 +3,12 @@
 :cer
     skos:prefLabel "CER"@en;
     skos:definition '''
-      The feed type representing Currency Exchange Rate feeds.
+      The feed type representing Current Exchange Rate feeds.
       This includes the feeds ADA-USD and FACT-ADA.
 
       ### Naming convention
 
-      For a feed of CER type, the feed name naming convention is `{{cur-a}}-{{curr-b}}`,
+      For a feed of CER type, the feed name naming convention is `{{curr-a}}-{{curr-b}}`,
       where the ordering follows the forex convention of 'base currency second' (see [base-quote](#baseQuote)).
       Currency names of fiat follow ISO 4217.
       For crypto base currencies, we defer to how it appears on CEXs.
