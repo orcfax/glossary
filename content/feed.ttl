@@ -7,4 +7,4 @@
 
       The term is also used to refer to the output of a feed.
     ''' ;
-    skos:related "feedId".
+    skos:related :feedId.

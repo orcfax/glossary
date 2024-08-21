@@ -6,4 +6,4 @@
       An entity which builds the use of Orcfax datum into their
       smart contract and transactions.
     ''' ;
-    skos:related "consumer".
+    skos:related :consumer.

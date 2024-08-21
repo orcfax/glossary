@@ -3,7 +3,7 @@
 :cer
     skos:prefLabel "CER"@en;
     skos:definition '''
-      The feed type representing Currency Exchange Rate feeds.
+      The feed type representing Current Exchange Rate feeds.
       This includes feeds such as ADA-USD and FACT-ADA.
 
       ### Naming convention
@@ -32,5 +32,5 @@
       Additional conventions regarding ordering will be fleshed
       out as the need arises.
     ''' ;
-    skos:broader "feed";
-    skos:related "forex".
+    skos:broader :feed;
+    skos:related :forex.

@@ -12,8 +12,8 @@
       operate.
       ''' ;
     skos:altLabel "centralized exchange";
-    skos:broader "forex";
-    skos:related "DEX";
+    skos:broader :forex;
+    skos:related :DEX;
     skos:note: '''
       <a href="https://www.bitcoin.com/get-started/what-is-a-cex">Ref</a>
     ''' .

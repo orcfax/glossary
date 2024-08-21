@@ -7,4 +7,4 @@
       not necessarily integrate it, see
       [integrator](#integrator).
     ''' ;
-    skos:related "integrator".
+    skos:related :integrator.

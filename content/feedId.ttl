@@ -11,4 +11,4 @@
       The ID can also be extended to a
       [versioned feed ID](#versionedFeedId).
     ''' ;
-    skos:related "versionedFeedId".
+    skos:related :versionedFeedId.
