@@ -42,8 +42,8 @@ Pre-commit is used for tidying:
 
 Helpful command line tools
 
-+ [just](https://github.com/casey/just) - "handy way to save and run
-  project-specific commands"
++ [just](https://github.com/casey/just) - "handy way to save and
+  run project-specific commands"
 
 Run `just` for suggestions.
 

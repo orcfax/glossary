@@ -7,8 +7,8 @@ labels: proposed
 assignees: ""
 ---
 
-Please use these properties from the W3C-SKOS ontology to describe your glossary
-submission/revision:
+Please use these properties from the W3C-SKOS ontology to
+describe your glossary submission/revision:
 
 - preferred label
 - definition
@@ -17,5 +17,5 @@ submission/revision:
 - narrower term
 - related term
 
-Preferred label is the only mandatory field you should include a value for.
-Please repeat this value as the issue name.
+Preferred label is the only mandatory field you should include a
+value for. Please repeat this value as the issue name.
