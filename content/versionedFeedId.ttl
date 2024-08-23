@@ -6,7 +6,7 @@
       The extension of the feed ID to contain version
       information.
 
-      It is constructed as `{{feed-ID}}/{{feed-version}}`
+      It is constructed as `{{feed-id}}/{{feed-version}}`
       or equivalently
       `{{feed-type}}/{{feed-name}}/{{feed-version}}`.
     ''' .
