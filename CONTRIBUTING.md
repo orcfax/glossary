@@ -18,9 +18,19 @@ add them here.
 ## Style guide
 
 Definitions are recorded in turtle format, where the definition
-field supports markdown.
+field supports markdown. Within this field, adhere to
+established Orcfax style [guidelines][style-1].
 
-One definition per file.
+Generally, there should be one definition per file; exceptions
+may occur when the term experiences contextually nuanced
+differences in definition.
+
+<!--
+>Example: {{example-term.ttl}}
+>
+>There are currently proposals in glossary/issues which could be
+>referenced here if passed.
+-->
 
 In certain places, use camel case names. Treat acronyms, such as
 `HTTP` or `JSON`, as single words. Thus the camel case of
@@ -45,16 +55,39 @@ filename.
 Preferred labels are lower cased unless they never appear in
 lowercase form. For example `domain`, and `ITN`.
 
-## Adding a new definition
+[style-1]: https://github.com/orcfax/docs/blob/main/editorialGuide.md
+
+## Proposing a new term
+
+In order to mitigate the number of active branches, contributors
+should first propose their desired term by utilizing repository
+[issues][git-1].
+
+An Orcfax glossary entry template is provided.
+
+If a term has been previously discussed in other internal
+channels, add contextualizing information in the comments.
+
+At a minimum, the proposer should designate themselves as an
+assignee. If other team members have actively participated in
+discussions relating to the term or if their expertise is
+pertinent, assign them as well.
+
+[git-1]: https://github.com/orcfax/glossary/issues
+
+## Adding a new term
+
+Proposed terms may then be added to the glossary.
 
 Open a new file `/content/<camelCaseName>.ttl`.
 
 Use a template (`/templates/*`) or copy the content of another
 definition file to bring in the correct prefixes.
 
-Add the new definition. Use markdown for styling and links.
+Add the definition settled on within the issue. Use markdown for
+styling and links.
 
-Add additional W3C-SKOS properties as appropriate
+Add additional W3C-SKOS properties as discussed
 (e.g. skos:related); the list of supported properties can be
 found in `.github/ISSUE_TEMPLATE/orcfax-glossary-entry.md`.
 
