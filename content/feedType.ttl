@@ -14,5 +14,5 @@
       and FACT-ADA.
 
       Each feed type has short, uppercased, label (eg `CER`).
-      This appears as the first part of  the feed id.
+      This appears as the first part of  the feed ID.
     ''' .

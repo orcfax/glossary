@@ -11,7 +11,7 @@
 
       For one $BASE a user needs n-$QUOTE.
     ''' ;
-    skos:related "forex";
+    skos:related :forex;
     skos:note: '''
       <a href="https://tradenation.com/en-bs/articles/base-currency-and-quote-currency/">Ref</a>
     '''.
