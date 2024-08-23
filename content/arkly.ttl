@@ -1,7 +1,8 @@
 @prefix : <http://glossary.orcfax.io/#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 :arkly
-    skos:prefLabel "arkly"@en;
+    skos:prefLabel "Arkly"@en;
     skos:definition '''
-A decentralized digital archive and permanent storage solution.
+      A decentralized digital archives management platform and
+      permanent storage solution.
     ''' .

@@ -3,8 +3,11 @@
 :datum
     skos:prefLabel "datum"@en;
     skos:definition '''
-      Optional data that can be associated to a utxo when it is created.
+      Optional data that can be associated to a UTXO when it is
+      created.
+
       There are several ways this can be done.
       The full datum must be available when spending a utxo.
-      This is automatic in the case that the datum was inlined when the utxo was created.
+      This is automatic in the case that the datum was inlined
+      when the UTXO was created.
     ''' .

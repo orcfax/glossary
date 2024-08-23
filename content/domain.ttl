@@ -2,4 +2,8 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 :domain
     skos:prefLabel "domain"@en;
-    skos:definition "A domain is the targeted subject area for a software-intensive system. It is the sphere of knowledge and activity around which the software's processes, rules, and data revolves"@en.
+    skos:definition '''
+      The targeted subject area for a software-intensive
+      system. It is the sphere of knowledge and activity around
+      which the software's processes, rules, and data revolves.
+    ''' .

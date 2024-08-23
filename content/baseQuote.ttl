@@ -4,8 +4,14 @@
     skos:prefLabel "base-quote"@en;
     skos:definition '''
       Describes a currency exchange rate.
+
+      In forex, currencies are traded in pairs. The first in the
+      pair is referred to as the base currency while the second
+      is referred to as the quote currency.
+
       For one $BASE a user needs n-$QUOTE.
     ''' ;
+    skos:related :forex;
     skos:note: '''
       <a href="https://tradenation.com/en-bs/articles/base-currency-and-quote-currency/">Ref</a>
     '''.

@@ -3,5 +3,8 @@
 :licenceNft
     skos:prefLabel "licence NFT"@en;
     skos:definition '''
-    An NFT that allows individuals to trustlessly verify their right to participate in the Orcfax network and which is used to verify the authenticity of a participant on the Orcfax network by Orcfax tooling.
+      An NFT that allows individuals to trustlessly verify their
+      right to participate in the Orcfax network and which is
+      used to verify the authenticity of a participant on the
+      Orcfax network by Orcfax tooling.
     ''' .

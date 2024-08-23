@@ -1,0 +1,15 @@
+@prefix : <http://glossary.orcfax.io/#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+:{{ ID }}
+    skos:prefLabel "{{ PREF_LABEL }}"@en;
+    skos:definition '''
+      {{ DEFINITION }}
+    ''' ;
+#    skos:altLabel "{{ ALT_LABEL }}";
+#    skos:broader :{{ BROADER_LABEL }};
+#    skos:narrower :{{ NARROWER_LABEL }};
+#    skos:related :{{ RELATED_LABEL }};
+#  skos:note: '''
+#    <a href="{{REF_URL}}">Ref</a>
+#    ''' .
+# Remove all labels which are not in use

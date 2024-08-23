@@ -4,19 +4,33 @@
     skos:prefLabel "CER"@en;
     skos:definition '''
       The feed type representing Current Exchange Rate feeds.
-      This includes the feeds ADA-USD and FACT-ADA.
+      This includes feeds such as ADA-USD and FACT-ADA.
 
       ### Naming convention
 
-      For a feed of CER type, the feed name naming convention is `{{curr-a}}-{{curr-b}}`,
-      where the ordering follows the forex convention of 'base currency second' (see [base-quote](#baseQuote)).
-      Currency names of fiat follow ISO 4217.
-      For crypto base currencies, we defer to how it appears on CEXs.
-      For cardano native tokens, we defer to how it appears on the main DEXs.
-      For example: for the case of crypto-fiat `ADA-USD`; crypto-stable `ADA-iUSD`; crypto-base and other native asset `FACT-ADA`.
+      For a feed of CER type, the naming convention is
+      `{{base-currency}}-{{quote-currency}}` and ordering
+      follows forex convention (see [base-quote](#baseQuote)).
+
+      Fiat currency names follow ISO 4217.
+
+      Currency names are stripped of `/` and any non-standard
+      characters.
+
+      For crypto base currencies, ordering defers to how the
+      pairs appear on CEXs.
+
+      For cardano native tokens, ordering defers to how pairs
+      appear on DEXs.
+
+      Examples
+      * crypto-fiat: `ADA-USD`
+      * crypto-stable: `ADA-iUSD`
+      * crypto and another native asset: `FACT-ADA`
 
       Beyond this, there is not yet precedence.
-      Currency names should stripped of `/` and any non-standard characters.
-      Ordering will be fleshed out as it arises.
+      Additional conventions regarding ordering will be fleshed
+      out as the need arises.
     ''' ;
-    skos:related :forex .
+    skos:broader :feed;
+    skos:related :forex.

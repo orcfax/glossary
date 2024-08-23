@@ -3,12 +3,14 @@
 :forex
     skos:prefLabel "forex"@en;
     skos:definition '''
-    The domain from which terminology about trading, and information about trading mechanisms for currencies is adopted.
+      The domain from which terminology about trading, and
+      information pertaining to trading mechanisms for
+      currencies, is adopted.
     ''' ;
+    skos:related :fiatCurrency;
+    skos:related :cryptoCurrency;
     skos:note '''
     References:
-    <a href="https://zondacrypto.com/en/helpdesk/zondacrypto-exchange/beginner/bitcoin-and-forex-market-differences">1</a>,
-    <a href="https://tradenation.com/en-bs/articles/base-currency-and-quote-currency/">2</a>
-    ''';
-    skos:related :fiatCurrency;
-    skos:related :cryptoCurrency .
+      <a href="https://zondacrypto.com/en/helpdesk/zondacrypto-exchange/beginner/bitcoin-and-forex-market-differences">1</a>,
+      <a href="https://tradenation.com/en-bs/articles/base-currency-and-quote-currency/">2</a>
+    '''.
