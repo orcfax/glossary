@@ -1,0 +1,11 @@
+@prefix : <http://glossary.orcfax.io/#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+:sourceDataPoint
+    skos:prefLabel "source data point"@en;
+    skos:definition '''
+      The value of a data source, or primary data source, query
+      which is embedded in that data source's response to a
+      given query.
+    ''' ;
+    skos:related ex1:dataSource ;
+    skos:related ex2:primaryDataSource.

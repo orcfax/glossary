@@ -1,0 +1,9 @@
+@prefix : <http://glossary.orcfax.io/#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+:dataSource
+    skos:prefLabel "data source"@en;
+    skos:definition '''
+       A person or entity that provides access to data for use
+       by others.
+    ''' ;
+    skos:narrower :primaryDataSource.
