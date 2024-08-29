@@ -1,0 +1,10 @@
+@prefix : <http://glossary.orcfax.io/#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+:oracleProblem
+    skos:prefLabel "oracle problem"@en;
+    skos:definition '''
+      The challenge of providing security, authenticity, and
+      trust, to information brought onto a blockchain in a
+      decentralized manner.
+    ''' ;
+    skos:related :oracle.

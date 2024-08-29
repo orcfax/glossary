@@ -1,0 +1,9 @@
+@prefix : <http://glossary.orcfax.io/#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+:triangulatedDataPoint
+    skos:prefLabel "triangulated data point"@en;
+    skos:definition '''
+       Noun
+       The data resulting from the process of triangulation.
+    ''' ;
+    skos:related :triangulation.

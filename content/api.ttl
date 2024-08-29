@@ -1,0 +1,11 @@
+@prefix : <http://glossary.orcfax.io/#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+:api
+    skos:prefLabel "API"@en;
+    skos:definition '''
+      A structured and predictable software interface which
+      provides a contract between external software components
+      for accessing data or services and better enabling
+      inter-connectivity between components.
+    ''' ;
+    skos:altLabel "application programming interface ".

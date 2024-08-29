@@ -1,0 +1,9 @@
+@prefix : <http://glossary.orcfax.io/#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+:trustless
+    skos:prefLabel "trustless"@en;
+    skos:definition '''
+      A description given to a non-excludable system which does
+      not require its users to rely upon or trust an
+      intermediary.
+    ''' .

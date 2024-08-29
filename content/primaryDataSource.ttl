@@ -1,0 +1,15 @@
+@prefix : <http://glossary.orcfax.io/#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+:primaryDataSource
+    skos:prefLabel "primary data source"@en;
+    skos:definition '''
+       Data collected firsthand by a person or entity during the
+       course of regular activity and made available for use by
+       others.
+
+       Example:
+       A CEX can be considered a primary data source when the
+       price data it provides is derived from the its own order
+       books and not from external data.
+    ''' ;
+    skos:broader :dataSource.

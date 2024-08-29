@@ -1,0 +1,18 @@
+@prefix : <http://glossary.orcfax.io/#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+:consensus
+    skos:prefLabel "consensus"@en;
+    skos:definition '''
+      A state which can be understood differently depending on
+      context:
+
+      When a task performed by an actor is verified as having
+      being performed, according set principles, by multiple
+      other actors.
+
+      When the properties of an output can be verified as
+      accurate by n- actors.
+
+      When the result of an output has been independently
+      observed by n- independent actors.
+    ''' .
