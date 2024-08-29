@@ -1,0 +1,14 @@
+@prefix : <http://glossary.orcfax.io/#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+:plutusScript
+    skos:prefLabel "plutus script"@en;
+    skos:definition '''
+      Code executed by Cardano nodes when accepting txs.
+      A plutus script, or simply script when the context is clear, governs:
+      the spending from the associated payment address;
+      the minting (and burning) of associated tokens;
+      withdrawals from the associiated staking account _etc_.
+      A tx will be rejected from the ledger if the script errors.
+      The hash (blake2b_256) of the script determines the associated tokens and credentials.
+    ''' ;
+    skos:altLabel "script".
