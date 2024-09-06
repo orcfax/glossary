@@ -4,11 +4,13 @@
     skos:prefLabel "feed ID"@en;
     skos:definition '''
       The unique ID of a feed which is constructed as
-      `{{feed-type}}/{{feed-name}}`
+      `{{feed-type}}/{{feed-name}}/`
 
-      Example: `CER/ADA-USD`
+      Example: `CER/ADA-USD/`
 
       The ID can also be extended to a
       [versioned feed ID](#versionedFeedId).
+
+      Note that a feed id includes the terminating `/`.
     ''' ;
     skos:related :versionedFeedId.

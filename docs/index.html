@@ -119,12 +119,12 @@
             <p class="text-center"><a href="https://github.com/orcfax/glossary">How to contribute</a></p>
             <hr>
             <dl class="row">
-              <div class="term-container" id="arkly" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">arkly</dt> <dd class="col-12" lang="en" property="skos:definition"><p> A decentralized digital archives management platform and
+              <div class="term-container" id="arkly" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">Arkly</dt> <dd class="col-12" lang="en" property="skos:definition"><p> A decentralized digital archives management platform and
  permanent storage solution.
  </p>
 </dd></div>
 
-<div class="term-container" id="arweave" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">arweave</dt> <dd class="col-12" lang="en" property="skos:definition"><p> A decentralized (layer-zero) storage network that provides
+<div class="term-container" id="arweave" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">Arweave</dt> <dd class="col-12" lang="en" property="skos:definition"><p> A decentralized (layer-zero) storage network that provides
  replication of data over hundreds of Arweave nodes and is
  funded by the Ar token.</p>
 <p> The network provides a one-time endowment model that
@@ -141,7 +141,7 @@
  is referred to as the quote currency.</p>
 <p> For one $BASE a user needs n-$QUOTE.
  </p>
-</dd> <dd class="col-12 mt" lang="en" property="skos:related"><a href="forex">forex</a></dd> <dd class="col-12 alt-label" lang="en" property="skos:note:">
+</dd> <dd class="col-12 mt" lang="en" property="skos:related"><a href="#forex">#forex</a></dd> <dd class="col-12 alt-label" lang="en" property="skos:note:">
       <a href="https://tradenation.com/en-bs/articles/base-currency-and-quote-currency/">Ref</a>
     </dd></div>
 
@@ -181,14 +181,16 @@
       <a href="https://www.bitcoin.com/get-started/what-is-a-cex">Ref</a>
     </dd></div>
 
-<div class="term-container" id="collectorNode" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">collector-node</dt> <dd class="col-12" lang="en" property="skos:definition"><p> A hosted set of scripts that aggregates and signs the
+<div class="term-container" id="collectorNode" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">collector node</dt> <dd class="col-12" lang="en" property="skos:definition"><p> A hosted set of scripts that aggregates and signs the
  <a href="#cer">CER</a> output of an Orcfax CEX or CNT collector.
  </p>
 </dd></div>
 
-<div class="term-container" id="consumer" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">consumer</dt> <dd class="col-12" lang="en" property="skos:definition"><p> Someone who might read the output of an Orcfax datum but
- not necessarily integrate it, see
- <a href="#integrator">integrator</a>.
+<div class="term-container" id="consumer" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">consumer</dt> <dd class="col-12" lang="en" property="skos:definition"><p> A participant, either directly or indirectly, in a
+ transaction within which orcfax data is used.</p>
+<p> Example:
+ the user of a lending platform which has integrated Orcfax
+ feeds is a consumer.
  </p>
 </dd> <dd class="col-12 mt" lang="en" property="skos:related"><a href="#integrator">#integrator</a></dd></div>
 
@@ -215,7 +217,7 @@
  </p>
 </dd></div>
 
-<div class="term-container" id="federatedOrcfaxNetwork" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">Federated Orcfax network</dt> <dd class="col-12" lang="en" property="skos:definition"><p> The early Orcfax network that decentralized collecting of
+<div class="term-container" id="federatedOrcfaxNetwork" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">Federated Orcfax Network</dt> <dd class="col-12" lang="en" property="skos:definition"><p> The early Orcfax network that decentralized collecting of
  <a href="#cer">CER</a> data and published validated collector data
  through a central validator and publisher hosted by
  Orcfax.
@@ -228,21 +230,22 @@
 </dd> <dd class="col-12 mt" lang="en" property="skos:related"><a href="#feedId">#feedId</a></dd></div>
 
 <div class="term-container" id="feedId" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">feed ID</dt> <dd class="col-12" lang="en" property="skos:definition"><p> The unique ID of a feed which is constructed as
- <code>{{feed-type}}/{{feed-name}}</code></p>
-<p> Example: <code>CER/ADA-USD</code></p>
+ <code>{{feed-type}}/{{feed-name}}/</code></p>
+<p> Example: <code>CER/ADA-USD/</code></p>
 <p> The ID can also be extended to a
- <a href="#versionedFeedId">versioned feed ID</a>.
+ <a href="#versionedFeedId">versioned feed ID</a>.</p>
+<p> Note that a feed id includes the terminating <code>/</code>.
  </p>
 </dd> <dd class="col-12 mt" lang="en" property="skos:related"><a href="#versionedFeedId">#versionedFeedId</a></dd></div>
 
 <div class="term-container" id="feedName" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">feed name</dt> <dd class="col-12" lang="en" property="skos:definition"><p> The identifier of a feed within a feed type which is
  selected to globally unique.</p>
 <p> Together with the feed type, the feed name determines the
- feed id. A short uppercase list of ASCII characters is
+ feed ID. A short uppercase list of ASCII characters is
  preferred, for example <code>ADA-USD</code>.</p>
 <p> Each feed type will have its own naming convention.
  </p>
-</dd> <dd class="col-12 mt" lang="en" property="skos:related"><a href="#feedID">#feedID</a></dd></div>
+</dd> <dd class="col-12 mt" lang="en" property="skos:related"><a href="#feedId">#feedId</a></dd></div>
 
 <div class="term-container" id="feedType" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">feed type</dt> <dd class="col-12" lang="en" property="skos:definition"><p> Each feed has exactly one feed type, which are used to
  group feeds into semantically similar sets.</p>
@@ -252,7 +255,7 @@
  (Currency Exchange Rate feeds) includes the feeds ADA-USD
  and FACT-ADA.</p>
 <p> Each feed type has short, uppercased, label (eg <code>CER</code>).
- This appears as the first part of  the feed id.
+ This appears as the first part of  the feed ID.
  </p>
 </dd></div>
 
@@ -331,7 +334,7 @@
  </p>
 </dd></div>
 
-<div class="term-container" id="versionedFeedId" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">versioned feed id</dt> <dd class="col-12" lang="en" property="skos:definition"><p> The extension of the feed id to contain version
+<div class="term-container" id="versionedFeedId" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">versioned feed ID</dt> <dd class="col-12" lang="en" property="skos:definition"><p> The extension of the feed ID to contain version
  information.</p>
 <p> It is constructed as <code>{{feed-id}}/{{feed-version}}</code>
  or equivalently
