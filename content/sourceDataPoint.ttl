@@ -7,5 +7,5 @@
       which is embedded in that data source's response to a
       given query.
     ''' ;
-    skos:related ex1:dataSource ;
-    skos:related ex2:primaryDataSource.
+    skos:related :dataSource ;
+    skos:related :primaryDataSource.
