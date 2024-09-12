@@ -1,0 +1,11 @@
+@prefix : <http://glossary.orcfax.io/#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+:subsidizedFeed
+    skos:prefLabel "subsidized feed"@en;
+    skos:definition '''
+      A feed which integrators may utilize and Orcfax has
+      committed to finance for a specified period of time or in
+      perpetuity; changes to the feed, or its subsidy will be
+      announced in advance.
+    ''' ;
+    skos:broader :feed.
