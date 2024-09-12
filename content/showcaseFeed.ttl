@@ -1,0 +1,14 @@
+@prefix : <http://glossary.orcfax.io/#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+:showcaseFeed
+    skos:prefLabel "showcase feed"@en;
+    skos:definition '''
+      An oracle feed designed to demonstrate or highlight
+      specific capabilities in a way which allows integrators to
+      perform tests on mainnet.
+
+      Orcfax makes no guarantees as to how long these feeds will
+      be offered in this capacity; they can be removed/changed
+      at any time and without warning.
+    ''' ;
+    skos:broader :feed.
