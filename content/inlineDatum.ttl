@@ -1,0 +1,9 @@
+@prefix : <http://glossary.orcfax.io/#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+:inlineDatum
+    skos:prefLabel "inline datum"@en;
+    skos:definition '''
+      A QoL improvement brought in with [CIP-32](https://cips.cardano.org/cip/CIP-32).
+      Together with [CIP-31](https://cips.cardano.org/cip/CIP-31), allowing for reference inputs,
+      it has made it easier to use on-chain data in a plutus script.
+    ''' .
