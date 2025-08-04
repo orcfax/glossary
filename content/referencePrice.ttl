@@ -1,0 +1,11 @@
+@prefix : <http://glossary.orcfax.io/#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+:referencePrice
+    skos:prefLabel "reference price"@en;
+    skos:definition '''
+      A data point published on-chain by Orcfax for a particular asset
+      pair. A reference price consists of a base-quote value for an
+      asset pair as it was read and aggregated at a specific timestamp.
+    ''' ;
+    skos:related :baseQuote;
+    skos:related :assetPair.

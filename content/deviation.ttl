@@ -1,0 +1,11 @@
+@prefix : <http://glossary.orcfax.io/#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+:deviation
+    skos:prefLabel "deviation"@en;
+    skos:definition '''
+      A threshold for base-quote pair values which, when exceeded,
+      triggers a publication event (i.e., when the value of ADA in
+      USD changes by a set percent), as determined by validator
+      parameters.
+    ''' ;
+    skos:related :baseQuote.

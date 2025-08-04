@@ -1,0 +1,11 @@
+@prefix : <http://glossary.orcfax.io/#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+:erroneousPrice
+    skos:prefLabel "erroneous price"@en;
+    skos:definition '''
+      A reference price that deviates significantly from other reference
+      sources used by untegrators to verify data points sampled at
+      approximately the same time.
+    ''' ;
+    skos:altLabel "bad price";
+    skos:related :referencePrice.
