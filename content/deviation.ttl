@@ -3,9 +3,9 @@
 :deviation
     skos:prefLabel "deviation"@en;
     skos:definition '''
-      A threshold for base-quote pair values which, when exceeded,
-      triggers a publication event (i.e., when the value of ADA in
-      USD changes by a set percent), as determined by validator
-      parameters.
+      A threshold for measuring base-quote pair value changes
+      which, when exceeded, triggers a publication event
+      (i.e., when the value of ADA in USD changes by a set percent),
+      as determined by validator parameters.
     ''' ;
     skos:related :baseQuote.
