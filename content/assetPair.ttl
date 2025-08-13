@@ -1,0 +1,13 @@
+@prefix : <http://glossary.orcfax.io/#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+:assetPair
+    skos:prefLabel "asset pair"@en;
+    skos:definition '''
+      An asset pair serves as a synonym for two values expressed as a
+      BASE-QUOTE pair in Orcfax documentation. A BASE-QUOTE pair
+      comprises two assets and indicates the value of the BASE asset
+      when converted to the QUOTE asset. For example, in a FACT-ADA
+      pair, a value of 0.77 signifies that one FACT is equivalent
+      to 0.77 ADA.
+    ''' ;
+    skos:related :baseQuote.
