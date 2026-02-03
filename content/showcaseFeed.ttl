@@ -3,7 +3,7 @@
 :showcaseFeed
     skos:prefLabel "showcase feed"@en;
     skos:definition '''
-      An oracle feed designed to demonstrate or highlight
+      A blockchain oracle feed designed to demonstrate or highlight
       specific capabilities in a way which allows integrators to
       perform tests on mainnet.
 

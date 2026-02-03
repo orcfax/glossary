@@ -1,429 +1,828 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Orcfax Glossary</title>
     <style>
-        /* Font settings with fallback fonts */
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+      /* Font settings with fallback fonts */
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 
-        body {
-            background-color: #f8f9fa;
-            font-family: 'Roboto', Arial, sans-serif;
-            font-size: 1rem;
-            font-weight: 400;
-            line-height: 1.5;
-            color: #212529;
-            margin: 0; /* Ensure no default margin */
-        }
+      body {
+        background-color: #f8f9fa;
+        font-family: "Roboto", Arial, sans-serif;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #212529;
+        margin: 0; /* Ensure no default margin */
+      }
 
-        .container {
-            margin-top: 3rem; /* Margin for the container */
-            margin-bottom: 3rem; /* Margin for the container */
-            width: 100%;
-            padding-right: 1rem; /* Adjusted padding */
-            padding-left: 1rem;  /* Adjusted padding */
-            max-width: 1140px; /* Constrain width */
-            margin-right: auto;
-            margin-left: auto;
-            box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
-        }
+      .container {
+        margin-top: 3rem; /* Margin for the container */
+        margin-bottom: 3rem; /* Margin for the container */
+        width: 100%;
+        padding-right: 1rem; /* Adjusted padding */
+        padding-left: 1rem; /* Adjusted padding */
+        max-width: 1140px; /* Constrain width */
+        margin-right: auto;
+        margin-left: auto;
+        box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
+      }
 
-        .text-center {
-            text-align: center;
-        }
+      .text-center {
+        text-align: center;
+      }
 
-        .mb-4 {
-            margin-bottom: 1.5rem;
-        }
+      .mb-4 {
+        margin-bottom: 1.5rem;
+      }
 
-        .mt-5 {
-            margin-top: 3rem;
-        }
+      .mt-5 {
+        margin-top: 3rem;
+      }
 
-        .row {
-            margin-right: -0.75rem; /* Negative margin to offset padding */
-            margin-left: -0.75rem; /* Negative margin to offset padding */
-        }
+      .row {
+        margin-right: -0.75rem; /* Negative margin to offset padding */
+        margin-left: -0.75rem; /* Negative margin to offset padding */
+      }
 
-        .col-12 {
-            padding-right: 0.75rem;
-            padding-left: 0.75rem;
-        }
+      .col-12 {
+        padding-right: 0.75rem;
+        padding-left: 0.75rem;
+      }
 
-        .mt-3 {
-            margin-top: 1rem;
-        }
+      .mt-3 {
+        margin-top: 1rem;
+      }
 
-        .content-wrapper {
-            background-color: #ffffff;
-            border: 1px solid #dee2e6;
-            border-radius: 0.5rem;
-            padding: 2rem;
-            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-            box-sizing: border-box;
-        }
+      .content-wrapper {
+        background-color: #ffffff;
+        border: 1px solid #dee2e6;
+        border-radius: 0.5rem;
+        padding: 2rem;
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        box-sizing: border-box;
+      }
 
-        .alt-label {
-            font-style: italic;
-            color: #6c757d;
-            margin-top: 0.5rem;
-        }
+      .alt-label {
+        font-style: italic;
+        color: #6c757d;
+        margin-top: 0.5rem;
+      }
 
-        .term-container {
-            width: 100%; /* Ensure full width for each term container */
-            margin-bottom: 1rem; /* Space between terms */
-        }
+      .term-container {
+        width: 100%; /* Ensure full width for each term container */
+        margin-bottom: 1rem; /* Space between terms */
+      }
 
-        dt[property="skos:prefLabel"] {
-            font-weight: bold;
-        }
+      dt[property="skos:prefLabel"] {
+        font-weight: bold;
+      }
 
-        .red {
-          color: red;
-        }
-
+      .red {
+        color: red;
+      }
     </style>
     <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "CreativeWork",
-      "additionalType": "Glossary",
-      "name": "Orcfax Glossary",
-      "description": "This glossary contains terms and definitions for the entities and concepts in the Orcfax domain. Orcfax is an oracle software system that publishes data about real-world events to the Cardano blockchain network. This glossary is reference documentation that is intended to guide Orcfax design and development. That means the glossary terms must be comprehensive, unambiguous, as well as semantically and logically consistent with all other terms in the glossary.",
-      "author": {
-        "@type": "Organization",
-        "name": "Orcfax development team"
-      },
-      "inLanguage": "en",
-      "url": "https://glossary.orcfax.io",
-      "version": 0.1.1
-    }
+      {
+        "@context": "http://schema.org",
+        "@type": "CreativeWork",
+        "additionalType": "Glossary",
+        "name": "Orcfax Glossary",
+        "description": "This glossary contains terms and definitions for the entities and concepts in the Orcfax domain. Orcfax is a blockchain oracle software system that publishes data about real-world events to the Cardano blockchain network. This glossary is reference documentation that is intended to guide Orcfax design and development. That means the glossary terms must be comprehensive, unambiguous, as well as semantically and logically consistent with all other terms in the glossary.",
+        "author": {
+          "@type": "Organization",
+          "name": "Orcfax development team"
+        },
+        "inLanguage": "en",
+        "url": "https://glossary.orcfax.io",
+        "version": 0.1.1
+      }
     </script>
     <script type="application/ld+json">
-    {
-      "@context": {
-        "skos": "http://www.w3.org/2004/02/skos/core#",
-        "xsd": "http://www.w3.org/2001/XMLSchema#"
+      {
+        "@context": {
+          "skos": "http://www.w3.org/2004/02/skos/core#",
+          "xsd": "http://www.w3.org/2001/XMLSchema#"
+        }
       }
-    }
     </script>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="content-wrapper">
-            <h1 class="text-center mb-4">Orcfax Glossary</h1>
-            <p class="text-center">This glossary contains terms and definitions for the entities and concepts in the <a href="https://orcfax.io">Orcfax</a> domain.</p>
-            <p class="text-center"><a href="https://github.com/orcfax/glossary">How to contribute</a></p>
-            <hr>
-            <dl class="row">
-              <div class="term-container" id="arkly" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">Arkly</dt> <dd class="col-12" lang="en" property="skos:definition"><p> A decentralized digital archives management platform and
- permanent storage solution.
- </p>
-</dd></div>
+      <div class="content-wrapper">
+        <h1 class="text-center mb-4">Orcfax Glossary</h1>
+        <p class="text-center">
+          This glossary contains terms and definitions for the entities and
+          concepts in the <a href="https://orcfax.io">Orcfax</a> domain.
+        </p>
+        <p class="text-center">
+          <a href="https://github.com/orcfax/glossary">How to contribute</a>
+        </p>
+        <hr />
+        <dl class="row">
+          <div class="term-container" id="arkly" typeof="skos:Concept">
+            <dt class="col-12 mt" lang="en" property="skos:prefLabel">Arkly</dt>
+            <dd class="col-12" lang="en" property="skos:definition">
+              <p>
+                A decentralized digital archives management platform and
+                permanent storage solution.
+              </p>
+            </dd>
+          </div>
 
-<div class="term-container" id="arweave" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">Arweave</dt> <dd class="col-12" lang="en" property="skos:definition"><p> A decentralized (layer-zero) storage network that provides
- replication of data over hundreds of Arweave nodes and is
- funded by the Ar token.</p>
-<p> The network provides a one-time endowment model that
- claims to fund the storage of a minimum 40 copies of each
- user file.
- </p>
-</dd> <dd class="col-12 alt-label" lang="en" property="skos:note:">
-      <a href="https://2hsfyi4t5fiqdcanybdez4e4admrjeqghts22viz7uuo3d5k2nna.arweave.net/0eRcI5PpUQGIDcBGTPCcANkUkgY85a1VGf0o7Y-q01o/#/en/storage-endowment">Ref</a>
-    </dd></div>
+          <div class="term-container" id="arweave" typeof="skos:Concept">
+            <dt class="col-12 mt" lang="en" property="skos:prefLabel">
+              Arweave
+            </dt>
+            <dd class="col-12" lang="en" property="skos:definition">
+              <p>
+                A decentralized (layer-zero) storage network that provides
+                replication of data over hundreds of Arweave nodes and is funded
+                by the Ar token.
+              </p>
+              <p>
+                The network provides a one-time endowment model that claims to
+                fund the storage of a minimum 40 copies of each user file.
+              </p>
+            </dd>
+            <dd class="col-12 alt-label" lang="en" property="skos:note:">
+              <a
+                href="https://2hsfyi4t5fiqdcanybdez4e4admrjeqghts22viz7uuo3d5k2nna.arweave.net/0eRcI5PpUQGIDcBGTPCcANkUkgY85a1VGf0o7Y-q01o/#/en/storage-endowment"
+                >Ref</a
+              >
+            </dd>
+          </div>
 
-<div class="term-container" id="baseQuote" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">base-quote</dt> <dd class="col-12" lang="en" property="skos:definition"><p> Describes a currency exchange rate.</p>
-<p> In forex, currencies are traded in pairs. The first in the
- pair is referred to as the base currency while the second
- is referred to as the quote currency.</p>
-<p> For one $BASE a user needs n-$QUOTE.
- </p>
-</dd> <dd class="col-12 mt" lang="en" property="skos:related"><a href="#forex">#forex</a></dd> <dd class="col-12 alt-label" lang="en" property="skos:note:">
-      <a href="https://tradenation.com/en-bs/articles/base-currency-and-quote-currency/">Ref</a>
-    </dd></div>
+          <div class="term-container" id="baseQuote" typeof="skos:Concept">
+            <dt class="col-12 mt" lang="en" property="skos:prefLabel">
+              base-quote
+            </dt>
+            <dd class="col-12" lang="en" property="skos:definition">
+              <p>Describes a currency exchange rate.</p>
+              <p>
+                In forex, currencies are traded in pairs. The first in the pair
+                is referred to as the base currency while the second is referred
+                to as the quote currency.
+              </p>
+              <p>For one $BASE a user needs n-$QUOTE.</p>
+            </dd>
+            <dd class="col-12 mt" lang="en" property="skos:related">
+              <a href="#forex">#forex</a>
+            </dd>
+            <dd class="col-12 alt-label" lang="en" property="skos:note:">
+              <a
+                href="https://tradenation.com/en-bs/articles/base-currency-and-quote-currency/"
+                >Ref</a
+              >
+            </dd>
+          </div>
 
-<div class="term-container" id="cer" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">CER</dt> <dd class="col-12" lang="en" property="skos:definition"><p> The feed type representing Current Exchange Rate feeds.
- This includes feeds such as ADA-USD and FACT-ADA.</p>
-<h3>Naming convention</h3>
-<p> For a feed of CER type, the naming convention is
- <code>{{base-currency}}-{{quote-currency}}</code> and ordering
- follows forex convention (see <a href="#baseQuote">base-quote</a>).</p>
-<p> Fiat currency names follow ISO 4217.</p>
-<p> Currency names are stripped of <code>/</code> and any non-standard
- characters.</p>
-<p> For crypto base currencies, ordering defers to how the
- pairs appear on CEXs.</p>
-<p> For cardano native tokens, ordering defers to how pairs
- appear on DEXs.</p>
-<p> Examples</p>
-<ul>
-<li>crypto-fiat: <code>ADA-USD</code></li>
-<li>crypto-stable: <code>ADA-iUSD</code></li>
-<li>crypto and another native asset: <code>FACT-ADA</code></li>
-</ul>
-<p> Beyond this, there is not yet precedence.
- Additional conventions regarding ordering will be fleshed
- out as the need arises.
- </p>
-</dd> <dd class="col-12 mt" lang="en" property="skos:related"><a href="#forex">#forex</a></dd> <dd class="col-12 alt-label" lang="en" property="skos:broader">http://glossary.orcfax.io/#feed</dd></div>
+          <div class="term-container" id="cer" typeof="skos:Concept">
+            <dt class="col-12 mt" lang="en" property="skos:prefLabel">CER</dt>
+            <dd class="col-12" lang="en" property="skos:definition">
+              <p>
+                The feed type representing Current Exchange Rate feeds. This
+                includes feeds such as ADA-USD and FACT-ADA.
+              </p>
+              <h3>Naming convention</h3>
+              <p>
+                For a feed of CER type, the naming convention is
+                <code>{{base-currency}}-{{quote-currency}}</code> and ordering
+                follows forex convention (see
+                <a href="#baseQuote">base-quote</a>).
+              </p>
+              <p>Fiat currency names follow ISO 4217.</p>
+              <p>
+                Currency names are stripped of <code>/</code> and any
+                non-standard characters.
+              </p>
+              <p>
+                For crypto base currencies, ordering defers to how the pairs
+                appear on CEXs.
+              </p>
+              <p>
+                For cardano native tokens, ordering defers to how pairs appear
+                on DEXs.
+              </p>
+              <p>Examples</p>
+              <ul>
+                <li>crypto-fiat: <code>ADA-USD</code></li>
+                <li>crypto-stable: <code>ADA-iUSD</code></li>
+                <li>crypto and another native asset: <code>FACT-ADA</code></li>
+              </ul>
+              <p>
+                Beyond this, there is not yet precedence. Additional conventions
+                regarding ordering will be fleshed out as the need arises.
+              </p>
+            </dd>
+            <dd class="col-12 mt" lang="en" property="skos:related">
+              <a href="#forex">#forex</a>
+            </dd>
+            <dd class="col-12 alt-label" lang="en" property="skos:broader">
+              http://glossary.orcfax.io/#feed
+            </dd>
+          </div>
 
-<div class="term-container" id="cex" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">CEX</dt> <dd class="col-12" lang="en" property="skos:definition"><p> Custodial platforms which grant users the ability to buy,
- sell, and swap assets.</p>
-<p> As private companies, CEXs manage all transactions, set
- exchange rules and fees, and are subject to the laws and
- regulations of every jurisdiction within which they
- operate.
- </p>
-</dd> <dd class="col-12 mt" lang="en" property="skos:related"><a href="#DEX">#DEX</a></dd> <dd class="col-12 alt-label" lang="en" property="skos:altLabel">centralized exchange</dd> <dd class="col-12 alt-label" lang="en" property="skos:broader">http://glossary.orcfax.io/#forex</dd> <dd class="col-12 alt-label" lang="en" property="skos:note:">
-      <a href="https://www.bitcoin.com/get-started/what-is-a-cex">Ref</a>
-    </dd></div>
+          <div class="term-container" id="cex" typeof="skos:Concept">
+            <dt class="col-12 mt" lang="en" property="skos:prefLabel">CEX</dt>
+            <dd class="col-12" lang="en" property="skos:definition">
+              <p>
+                Custodial platforms which grant users the ability to buy, sell,
+                and swap assets.
+              </p>
+              <p>
+                As private companies, CEXs manage all transactions, set exchange
+                rules and fees, and are subject to the laws and regulations of
+                every jurisdiction within which they operate.
+              </p>
+            </dd>
+            <dd class="col-12 mt" lang="en" property="skos:related">
+              <a href="#DEX">#DEX</a>
+            </dd>
+            <dd class="col-12 alt-label" lang="en" property="skos:altLabel">
+              centralized exchange
+            </dd>
+            <dd class="col-12 alt-label" lang="en" property="skos:broader">
+              http://glossary.orcfax.io/#forex
+            </dd>
+            <dd class="col-12 alt-label" lang="en" property="skos:note:">
+              <a href="https://www.bitcoin.com/get-started/what-is-a-cex"
+                >Ref</a
+              >
+            </dd>
+          </div>
 
-<div class="term-container" id="collectorNode" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">collector node</dt> <dd class="col-12" lang="en" property="skos:definition"><p> A hosted set of scripts that aggregates and signs the
- <a href="#cer">CER</a> output of an Orcfax CEX or CNT collector.
- </p>
-</dd></div>
+          <div class="term-container" id="collectorNode" typeof="skos:Concept">
+            <dt class="col-12 mt" lang="en" property="skos:prefLabel">
+              collector node
+            </dt>
+            <dd class="col-12" lang="en" property="skos:definition">
+              <p>
+                A hosted set of scripts that aggregates and signs the
+                <a href="#cer">CER</a> output of an Orcfax CEX or CNT collector.
+              </p>
+            </dd>
+          </div>
 
-<div class="term-container" id="consensus" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">consensus</dt> <dd class="col-12" lang="en" property="skos:definition"><p> A state which can be understood differently depending on
- context:</p>
-<p> When a task performed by an actor is verified as having
- being performed, according set principles, by multiple
- other actors.</p>
-<p> When the properties of an output can be verified as
- accurate by n- actors.</p>
-<p> When the result of an output has been independently
- observed by n- independent actors.
- </p>
-</dd></div>
+          <div class="term-container" id="consensus" typeof="skos:Concept">
+            <dt class="col-12 mt" lang="en" property="skos:prefLabel">
+              consensus
+            </dt>
+            <dd class="col-12" lang="en" property="skos:definition">
+              <p>
+                A state which can be understood differently depending on
+                context:
+              </p>
+              <p>
+                When a task performed by an actor is verified as having being
+                performed, according set principles, by multiple other actors.
+              </p>
+              <p>
+                When the properties of an output can be verified as accurate by
+                n- actors.
+              </p>
+              <p>
+                When the result of an output has been independently observed by
+                n- independent actors.
+              </p>
+            </dd>
+          </div>
 
-<div class="term-container" id="consumer" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">consumer</dt> <dd class="col-12" lang="en" property="skos:definition"><p> A participant, either directly or indirectly, in a
- transaction within which orcfax data is used.</p>
-<p> Example:
- the user of a lending platform which has integrated Orcfax
- feeds is a consumer.
- </p>
-</dd> <dd class="col-12 mt" lang="en" property="skos:related"><a href="#integrator">#integrator</a></dd></div>
+          <div class="term-container" id="consumer" typeof="skos:Concept">
+            <dt class="col-12 mt" lang="en" property="skos:prefLabel">
+              consumer
+            </dt>
+            <dd class="col-12" lang="en" property="skos:definition">
+              <p>
+                A participant, either directly or indirectly, in a transaction
+                within which orcfax data is used.
+              </p>
+              <p>
+                Example: the user of a lending platform which has integrated
+                Orcfax feeds is a consumer.
+              </p>
+            </dd>
+            <dd class="col-12 mt" lang="en" property="skos:related">
+              <a href="#integrator">#integrator</a>
+            </dd>
+          </div>
 
-<div class="term-container" id="dataSource" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">data source</dt> <dd class="col-12" lang="en" property="skos:definition"><p> A person or entity that provides access to data for use
- by others.
- </p>
-</dd> <dd class="col-12 alt-label" lang="en" property="skos:narrower">http://glossary.orcfax.io/#primaryDataSource</dd></div>
+          <div class="term-container" id="dataSource" typeof="skos:Concept">
+            <dt class="col-12 mt" lang="en" property="skos:prefLabel">
+              data source
+            </dt>
+            <dd class="col-12" lang="en" property="skos:definition">
+              <p>
+                A person or entity that provides access to data for use by
+                others.
+              </p>
+            </dd>
+            <dd class="col-12 alt-label" lang="en" property="skos:narrower">
+              http://glossary.orcfax.io/#primaryDataSource
+            </dd>
+          </div>
 
-<div class="term-container" id="datum" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">datum</dt> <dd class="col-12" lang="en" property="skos:definition"><p> Optional data that can be associated to a UTXO when it is
- created.</p>
-<p> There are several ways this can be done.
- The full datum must be available when spending a utxo.
- This is automatic in the case that the datum was inlined
- when the UTXO was created.
- </p>
-</dd></div>
+          <div class="term-container" id="datum" typeof="skos:Concept">
+            <dt class="col-12 mt" lang="en" property="skos:prefLabel">datum</dt>
+            <dd class="col-12" lang="en" property="skos:definition">
+              <p>
+                Optional data that can be associated to a UTXO when it is
+                created.
+              </p>
+              <p>
+                There are several ways this can be done. The full datum must be
+                available when spending a utxo. This is automatic in the case
+                that the datum was inlined when the UTXO was created.
+              </p>
+            </dd>
+          </div>
 
-<div class="term-container" id="dex" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">DEX</dt> <dd class="col-12" lang="en" property="skos:definition"><p> Non-custodial platforms built on blockchain networks which
- allow peer-to-peer transactions between users, enabling
- them to buy, sell, and swap assets without a intermediary.
- </p>
-</dd> <dd class="col-12 mt" lang="en" property="skos:related"><a href="#CEX">#CEX</a></dd> <dd class="col-12 alt-label" lang="en" property="skos:altLabel">decentralized exchange</dd> <dd class="col-12 alt-label" lang="en" property="skos:broader">http://glossary.orcfax.io/#forex</dd> <dd class="col-12 alt-label" lang="en" property="skos:note:">
-      <a href="https://www.emurgo.io/press-news/defi-basics-decentralized-exchanges-dex/">Ref</a>
-    </dd></div>
+          <div class="term-container" id="dex" typeof="skos:Concept">
+            <dt class="col-12 mt" lang="en" property="skos:prefLabel">DEX</dt>
+            <dd class="col-12" lang="en" property="skos:definition">
+              <p>
+                Non-custodial platforms built on blockchain networks which allow
+                peer-to-peer transactions between users, enabling them to buy,
+                sell, and swap assets without a intermediary.
+              </p>
+            </dd>
+            <dd class="col-12 mt" lang="en" property="skos:related">
+              <a href="#CEX">#CEX</a>
+            </dd>
+            <dd class="col-12 alt-label" lang="en" property="skos:altLabel">
+              decentralized exchange
+            </dd>
+            <dd class="col-12 alt-label" lang="en" property="skos:broader">
+              http://glossary.orcfax.io/#forex
+            </dd>
+            <dd class="col-12 alt-label" lang="en" property="skos:note:">
+              <a
+                href="https://www.emurgo.io/press-news/defi-basics-decentralized-exchanges-dex/"
+                >Ref</a
+              >
+            </dd>
+          </div>
 
-<div class="term-container" id="domain" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">domain</dt> <dd class="col-12" lang="en" property="skos:definition"><p> The targeted subject area for a software-intensive
- system. It is the sphere of knowledge and activity around
- which the software&#39;s processes, rules, and data revolves.
- </p>
-</dd></div>
+          <div class="term-container" id="domain" typeof="skos:Concept">
+            <dt class="col-12 mt" lang="en" property="skos:prefLabel">
+              domain
+            </dt>
+            <dd class="col-12" lang="en" property="skos:definition">
+              <p>
+                The targeted subject area for a software-intensive system. It is
+                the sphere of knowledge and activity around which the
+                software&#39;s processes, rules, and data revolves.
+              </p>
+            </dd>
+          </div>
 
-<div class="term-container" id="federatedOrcfaxNetwork" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">Federated Orcfax Network</dt> <dd class="col-12" lang="en" property="skos:definition"><p> The early Orcfax network that decentralized collecting of
- <a href="#cer">CER</a> data and published validated collector data
- through a central validator and publisher hosted by
- Orcfax.
- </p>
-</dd></div>
+          <div
+            class="term-container"
+            id="federatedOrcfaxNetwork"
+            typeof="skos:Concept"
+          >
+            <dt class="col-12 mt" lang="en" property="skos:prefLabel">
+              Federated Orcfax Network
+            </dt>
+            <dd class="col-12" lang="en" property="skos:definition">
+              <p>
+                The early Orcfax network that decentralized collecting of
+                <a href="#cer">CER</a> data and published validated collector
+                data through a central validator and publisher hosted by Orcfax.
+              </p>
+            </dd>
+          </div>
 
-<div class="term-container" id="feed" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">feed</dt> <dd class="col-12" lang="en" property="skos:definition"><p> A data pipeline handling time series data.</p>
-<p> The term is also used to refer to the output of a feed.
- </p>
-</dd> <dd class="col-12 mt" lang="en" property="skos:related"><a href="#feedId">#feedId</a></dd></div>
+          <div class="term-container" id="feed" typeof="skos:Concept">
+            <dt class="col-12 mt" lang="en" property="skos:prefLabel">feed</dt>
+            <dd class="col-12" lang="en" property="skos:definition">
+              <p>A data pipeline handling time series data.</p>
+              <p>The term is also used to refer to the output of a feed.</p>
+            </dd>
+            <dd class="col-12 mt" lang="en" property="skos:related">
+              <a href="#feedId">#feedId</a>
+            </dd>
+          </div>
 
-<div class="term-container" id="feedId" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">feed ID</dt> <dd class="col-12" lang="en" property="skos:definition"><p> The unique ID of a feed which is constructed as
- <code>{{feed-type}}/{{feed-name}}/</code></p>
-<p> Example: <code>CER/ADA-USD/</code></p>
-<p> The ID can also be extended to a
- <a href="#versionedFeedId">versioned feed ID</a>.</p>
-<p> Note that a feed id includes the terminating <code>/</code>.
- </p>
-</dd> <dd class="col-12 mt" lang="en" property="skos:related"><a href="#versionedFeedId">#versionedFeedId</a></dd></div>
+          <div class="term-container" id="feedId" typeof="skos:Concept">
+            <dt class="col-12 mt" lang="en" property="skos:prefLabel">
+              feed ID
+            </dt>
+            <dd class="col-12" lang="en" property="skos:definition">
+              <p>
+                The unique ID of a feed which is constructed as
+                <code>{{feed-type}}/{{feed-name}}/</code>
+              </p>
+              <p>Example: <code>CER/ADA-USD/</code></p>
+              <p>
+                The ID can also be extended to a
+                <a href="#versionedFeedId">versioned feed ID</a>.
+              </p>
+              <p>
+                Note that a feed id includes the terminating <code>/</code>.
+              </p>
+            </dd>
+            <dd class="col-12 mt" lang="en" property="skos:related">
+              <a href="#versionedFeedId">#versionedFeedId</a>
+            </dd>
+          </div>
 
-<div class="term-container" id="feedName" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">feed name</dt> <dd class="col-12" lang="en" property="skos:definition"><p> The identifier of a feed within a feed type which is
- selected to globally unique.</p>
-<p> Together with the feed type, the feed name determines the
- feed ID. A short uppercase list of ASCII characters is
- preferred, for example <code>ADA-USD</code>.</p>
-<p> Each feed type will have its own naming convention.
- </p>
-</dd> <dd class="col-12 mt" lang="en" property="skos:related"><a href="#feedId">#feedId</a></dd></div>
+          <div class="term-container" id="feedName" typeof="skos:Concept">
+            <dt class="col-12 mt" lang="en" property="skos:prefLabel">
+              feed name
+            </dt>
+            <dd class="col-12" lang="en" property="skos:definition">
+              <p>
+                The identifier of a feed within a feed type which is selected to
+                globally unique.
+              </p>
+              <p>
+                Together with the feed type, the feed name determines the feed
+                ID. A short uppercase list of ASCII characters is preferred, for
+                example <code>ADA-USD</code>.
+              </p>
+              <p>Each feed type will have its own naming convention.</p>
+            </dd>
+            <dd class="col-12 mt" lang="en" property="skos:related">
+              <a href="#feedId">#feedId</a>
+            </dd>
+          </div>
 
-<div class="term-container" id="feedType" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">feed type</dt> <dd class="col-12" lang="en" property="skos:definition"><p> Each feed has exactly one feed type, which are used to
- group feeds into semantically similar sets.</p>
-<p> Two feeds of the same type will share statement body
- datatypes, and have the same visualisations etc.</p>
-<p> For example, the feed type <code>CER</code>
- (Currency Exchange Rate feeds) includes the feeds ADA-USD
- and FACT-ADA.</p>
-<p> Each feed type has short, uppercased, label (eg <code>CER</code>).
- This appears as the first part of  the feed ID.
- </p>
-</dd></div>
+          <div class="term-container" id="feedType" typeof="skos:Concept">
+            <dt class="col-12 mt" lang="en" property="skos:prefLabel">
+              feed type
+            </dt>
+            <dd class="col-12" lang="en" property="skos:definition">
+              <p>
+                Each feed has exactly one feed type, which are used to group
+                feeds into semantically similar sets.
+              </p>
+              <p>
+                Two feeds of the same type will share statement body datatypes,
+                and have the same visualisations etc.
+              </p>
+              <p>
+                For example, the feed type <code>CER</code> (Currency Exchange
+                Rate feeds) includes the feeds ADA-USD and FACT-ADA.
+              </p>
+              <p>
+                Each feed type has short, uppercased, label (eg
+                <code>CER</code>). This appears as the first part of the feed
+                ID.
+              </p>
+            </dd>
+          </div>
 
-<div class="term-container" id="forex" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">forex</dt> <dd class="col-12" lang="en" property="skos:definition"><p> The domain from which terminology about trading, and
- information pertaining to trading mechanisms for
- currencies, is adopted.
- </p>
-</dd> <dd class="col-12 mt" lang="en" property="skos:related"><a href="#fiatCurrency">#fiatCurrency</a></dd> <dd class="col-12 mt" lang="en" property="skos:related"><a href="#cryptoCurrency">#cryptoCurrency</a></dd> <dd class="col-12 alt-label" lang="en" property="skos:note">
-    References:
-      <a href="https://zondacrypto.com/en/helpdesk/zondacrypto-exchange/beginner/bitcoin-and-forex-market-differences">1</a>,
-      <a href="https://tradenation.com/en-bs/articles/base-currency-and-quote-currency/">2</a>
-    </dd></div>
+          <div class="term-container" id="forex" typeof="skos:Concept">
+            <dt class="col-12 mt" lang="en" property="skos:prefLabel">forex</dt>
+            <dd class="col-12" lang="en" property="skos:definition">
+              <p>
+                The domain from which terminology about trading, and information
+                pertaining to trading mechanisms for currencies, is adopted.
+              </p>
+            </dd>
+            <dd class="col-12 mt" lang="en" property="skos:related">
+              <a href="#fiatCurrency">#fiatCurrency</a>
+            </dd>
+            <dd class="col-12 mt" lang="en" property="skos:related">
+              <a href="#cryptoCurrency">#cryptoCurrency</a>
+            </dd>
+            <dd class="col-12 alt-label" lang="en" property="skos:note">
+              References:
+              <a
+                href="https://zondacrypto.com/en/helpdesk/zondacrypto-exchange/beginner/bitcoin-and-forex-market-differences"
+                >1</a
+              >,
+              <a
+                href="https://tradenation.com/en-bs/articles/base-currency-and-quote-currency/"
+                >2</a
+              >
+            </dd>
+          </div>
 
-<div class="term-container" id="function" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">function</dt> <dd class="col-12" lang="en" property="skos:definition"><p> A distinct and self-contained unit of code that
- accomplishes a specific task using given inputs to
- generate a predictable output.
- </p>
-</dd></div>
+          <div class="term-container" id="function" typeof="skos:Concept">
+            <dt class="col-12 mt" lang="en" property="skos:prefLabel">
+              function
+            </dt>
+            <dd class="col-12" lang="en" property="skos:definition">
+              <p>
+                A distinct and self-contained unit of code that accomplishes a
+                specific task using given inputs to generate a predictable
+                output.
+              </p>
+            </dd>
+          </div>
 
-<div class="term-container" id="heartbeat" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">heartbeat</dt> <dd class="col-12" lang="en" property="skos:definition"><p> The interval at which a datum is published on-chain.
- </p>
-</dd> <dd class="col-12 alt-label" lang="en" property="skos:note">
-      <a href="https://github.com/orcfax/issues/issues/103#issuecomment-1941452885">Link</a>
-    </dd></div>
+          <div class="term-container" id="heartbeat" typeof="skos:Concept">
+            <dt class="col-12 mt" lang="en" property="skos:prefLabel">
+              heartbeat
+            </dt>
+            <dd class="col-12" lang="en" property="skos:definition">
+              <p>The interval at which a datum is published on-chain.</p>
+            </dd>
+            <dd class="col-12 alt-label" lang="en" property="skos:note">
+              <a
+                href="https://github.com/orcfax/issues/issues/103#issuecomment-1941452885"
+                >Link</a
+              >
+            </dd>
+          </div>
 
-<div class="term-container" id="inlineDatum" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">inline datum</dt> <dd class="col-12" lang="en" property="skos:definition"><p> A QoL improvement brought in with <a href="https://cips.cardano.org/cip/CIP-32">CIP-32</a>.
- Together with <a href="https://cips.cardano.org/cip/CIP-31">CIP-31</a>, allowing for reference inputs,
- it has made it easier to use on-chain data in a plutus script.
- </p>
-</dd></div>
+          <div class="term-container" id="inlineDatum" typeof="skos:Concept">
+            <dt class="col-12 mt" lang="en" property="skos:prefLabel">
+              inline datum
+            </dt>
+            <dd class="col-12" lang="en" property="skos:definition">
+              <p>
+                A QoL improvement brought in with
+                <a href="https://cips.cardano.org/cip/CIP-32">CIP-32</a>.
+                Together with
+                <a href="https://cips.cardano.org/cip/CIP-31">CIP-31</a>,
+                allowing for reference inputs, it has made it easier to use
+                on-chain data in a plutus script.
+              </p>
+            </dd>
+          </div>
 
-<div class="term-container" id="integrator" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">integrator</dt> <dd class="col-12" lang="en" property="skos:definition"><p> An entity which builds the use of Orcfax datum into their
- smart contract and transactions.
- </p>
-</dd> <dd class="col-12 mt" lang="en" property="skos:related"><a href="#consumer">#consumer</a></dd></div>
+          <div class="term-container" id="integrator" typeof="skos:Concept">
+            <dt class="col-12 mt" lang="en" property="skos:prefLabel">
+              integrator
+            </dt>
+            <dd class="col-12" lang="en" property="skos:definition">
+              <p>
+                An entity which builds the use of Orcfax datum into their smart
+                contract and transactions.
+              </p>
+            </dd>
+            <dd class="col-12 mt" lang="en" property="skos:related">
+              <a href="#consumer">#consumer</a>
+            </dd>
+          </div>
 
-<div class="term-container" id="itn" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">ITN</dt> <dd class="col-12" lang="en" property="skos:definition"><p> A phased program of iterative design and ground-truthing
- using the resources of licensed Orcfax validators.
- </p>
-</dd> <dd class="col-12 alt-label" lang="en" property="skos:altLabel">incentivized test net</dd></div>
+          <div class="term-container" id="itn" typeof="skos:Concept">
+            <dt class="col-12 mt" lang="en" property="skos:prefLabel">ITN</dt>
+            <dd class="col-12" lang="en" property="skos:definition">
+              <p>
+                A phased program of iterative design and ground-truthing using
+                the resources of licensed Orcfax validators.
+              </p>
+            </dd>
+            <dd class="col-12 alt-label" lang="en" property="skos:altLabel">
+              incentivized test net
+            </dd>
+          </div>
 
-<div class="term-container" id="licenceNft" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">licence NFT</dt> <dd class="col-12" lang="en" property="skos:definition"><p> An NFT that allows individuals to trustlessly verify their
- right to participate in the Orcfax network and which is
- used to verify the authenticity of a participant on the
- Orcfax network by Orcfax tooling.
- </p>
-</dd></div>
+          <div class="term-container" id="licenceNft" typeof="skos:Concept">
+            <dt class="col-12 mt" lang="en" property="skos:prefLabel">
+              licence NFT
+            </dt>
+            <dd class="col-12" lang="en" property="skos:definition">
+              <p>
+                An NFT that allows individuals to trustlessly verify their right
+                to participate in the Orcfax network and which is used to verify
+                the authenticity of a participant on the Orcfax network by
+                Orcfax tooling.
+              </p>
+            </dd>
+          </div>
 
-<div class="term-container" id="oracleProblem" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">oracle problem</dt> <dd class="col-12" lang="en" property="skos:definition"><p> The challenge of providing security, authenticity, and
- trust, to information brought onto a blockchain in a
- decentralized manner.
- </p>
-</dd> <dd class="col-12 mt" lang="en" property="skos:related"><a href="#oracle">#oracle</a></dd></div>
+          <div
+            class="term-container"
+            id="blockchainOracleProblem"
+            typeof="skos:Concept"
+          >
+            <dt class="col-12 mt" lang="en" property="skos:prefLabel">
+              blockchain oracle problem
+            </dt>
+            <dd class="col-12" lang="en" property="skos:definition">
+              <p>
+                The challenge of providing security, authenticity, and trust, to
+                information brought onto a blockchain in a decentralized manner.
+              </p>
+            </dd>
+            <dd class="col-12 mt" lang="en" property="skos:related">
+              <a href="#blockchainOracle">#blockchainOracle</a>
+            </dd>
+          </div>
 
-<div class="term-container" id="plutusScript" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">plutus script</dt> <dd class="col-12" lang="en" property="skos:definition"><p> Code executed by Cardano nodes when accepting txs.
- A plutus script, or simply script when the context is clear, governs:
- the spending from the associated payment address;
- the minting (and burning) of associated tokens;
- withdrawals from the associiated staking account <em>etc</em>.
- A tx will be rejected from the ledger if the script errors.
- The hash (blake2b_256) of the script determines the associated tokens and credentials.
- </p>
-</dd> <dd class="col-12 alt-label" lang="en" property="skos:altLabel">script</dd></div>
+          <div class="term-container" id="plutusScript" typeof="skos:Concept">
+            <dt class="col-12 mt" lang="en" property="skos:prefLabel">
+              plutus script
+            </dt>
+            <dd class="col-12" lang="en" property="skos:definition">
+              <p>
+                Code executed by Cardano nodes when accepting txs. A plutus
+                script, or simply script when the context is clear, governs: the
+                spending from the associated payment address; the minting (and
+                burning) of associated tokens; withdrawals from the associiated
+                staking account <em>etc</em>. A tx will be rejected from the
+                ledger if the script errors. The hash (blake2b_256) of the
+                script determines the associated tokens and credentials.
+              </p>
+            </dd>
+            <dd class="col-12 alt-label" lang="en" property="skos:altLabel">
+              script
+            </dd>
+          </div>
 
-<div class="term-container" id="primaryDataSource" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">primary data source</dt> <dd class="col-12" lang="en" property="skos:definition"><p> Data collected firsthand by a person or entity during the
- course of regular activity and made available for use by
- others.</p>
-<p> Example:
- A CEX can be considered a primary data source when the
- price data it provides is derived from the its own order
- books and not from external data.
- </p>
-</dd> <dd class="col-12 alt-label" lang="en" property="skos:broader">http://glossary.orcfax.io/#dataSource</dd></div>
+          <div
+            class="term-container"
+            id="primaryDataSource"
+            typeof="skos:Concept"
+          >
+            <dt class="col-12 mt" lang="en" property="skos:prefLabel">
+              primary data source
+            </dt>
+            <dd class="col-12" lang="en" property="skos:definition">
+              <p>
+                Data collected firsthand by a person or entity during the course
+                of regular activity and made available for use by others.
+              </p>
+              <p>
+                Example: A CEX can be considered a primary data source when the
+                price data it provides is derived from the its own order books
+                and not from external data.
+              </p>
+            </dd>
+            <dd class="col-12 alt-label" lang="en" property="skos:broader">
+              http://glossary.orcfax.io/#dataSource
+            </dd>
+          </div>
 
-<div class="term-container" id="rejectedData" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">rejected data</dt> <dd class="col-12" lang="en" property="skos:definition"><p> Data that was received by an Orcfax validator but rejected
- as it did not have all of the properties required to
- satisfy the consensus algorithm, e.g. its content
- signature did not match what was received, the median
- could not be accurately re-calculated, or its timestamp
- was &gt; 80 seconds.
- </p>
-</dd></div>
+          <div class="term-container" id="rejectedData" typeof="skos:Concept">
+            <dt class="col-12 mt" lang="en" property="skos:prefLabel">
+              rejected data
+            </dt>
+            <dd class="col-12" lang="en" property="skos:definition">
+              <p>
+                Data that was received by an Orcfax validator but rejected as it
+                did not have all of the properties required to satisfy the
+                consensus algorithm, e.g. its content signature did not match
+                what was received, the median could not be accurately
+                re-calculated, or its timestamp was &gt; 80 seconds.
+              </p>
+            </dd>
+          </div>
 
-<div class="term-container" id="showcaseFeed" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">showcase feed</dt> <dd class="col-12" lang="en" property="skos:definition"><p> An oracle feed designed to demonstrate or highlight
- specific capabilities in a way which allows integrators to
- perform tests on mainnet.</p>
-<p> Orcfax makes no guarantees as to how long these feeds will
- be offered in this capacity; they can be removed/changed
- at any time and without warning.
- </p>
-</dd> <dd class="col-12 alt-label" lang="en" property="skos:broader">http://glossary.orcfax.io/#feed</dd></div>
+          <div class="term-container" id="showcaseFeed" typeof="skos:Concept">
+            <dt class="col-12 mt" lang="en" property="skos:prefLabel">
+              showcase feed
+            </dt>
+            <dd class="col-12" lang="en" property="skos:definition">
+              <p>
+                A blockchain oracle feed designed to demonstrate or highlight
+                specific capabilities in a way which allows integrators to
+                perform tests on mainnet.
+              </p>
+              <p>
+                Orcfax makes no guarantees as to how long these feeds will be
+                offered in this capacity; they can be removed/changed at any
+                time and without warning.
+              </p>
+            </dd>
+            <dd class="col-12 alt-label" lang="en" property="skos:broader">
+              http://glossary.orcfax.io/#feed
+            </dd>
+          </div>
 
-<div class="term-container" id="sourceDataPoint" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">source data point</dt> <dd class="col-12" lang="en" property="skos:definition"><p> The value of a data source, or primary data source, query
- which is embedded in that data source&#39;s response to a
- given query.
- </p>
-</dd> <dd class="col-12 mt" lang="en" property="skos:related"><a href="#dataSource">#dataSource</a></dd> <dd class="col-12 mt" lang="en" property="skos:related"><a href="#primaryDataSource">#primaryDataSource</a></dd></div>
+          <div
+            class="term-container"
+            id="sourceDataPoint"
+            typeof="skos:Concept"
+          >
+            <dt class="col-12 mt" lang="en" property="skos:prefLabel">
+              source data point
+            </dt>
+            <dd class="col-12" lang="en" property="skos:definition">
+              <p>
+                The value of a data source, or primary data source, query which
+                is embedded in that data source&#39;s response to a given query.
+              </p>
+            </dd>
+            <dd class="col-12 mt" lang="en" property="skos:related">
+              <a href="#dataSource">#dataSource</a>
+            </dd>
+            <dd class="col-12 mt" lang="en" property="skos:related">
+              <a href="#primaryDataSource">#primaryDataSource</a>
+            </dd>
+          </div>
 
-<div class="term-container" id="transaction" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">transaction</dt> <dd class="col-12" lang="en" property="skos:definition"><p> The fundamental operation for evolving the state of a
- blockchain.
- </p>
-</dd></div>
+          <div class="term-container" id="transaction" typeof="skos:Concept">
+            <dt class="col-12 mt" lang="en" property="skos:prefLabel">
+              transaction
+            </dt>
+            <dd class="col-12" lang="en" property="skos:definition">
+              <p>
+                The fundamental operation for evolving the state of a
+                blockchain.
+              </p>
+            </dd>
+          </div>
 
-<div class="term-container" id="triagulation" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">triangulation</dt> <dd class="col-12" lang="en" property="skos:definition"><p> The determination of a single data point from a minimum of
- three sources.</p>
-<p> Example</p>
-<ul>
-<li>the median value of five central exchange results for
- ADA-USD constitutes a triangulated value.</li>
-</ul>
-</dd></div>
+          <div class="term-container" id="triagulation" typeof="skos:Concept">
+            <dt class="col-12 mt" lang="en" property="skos:prefLabel">
+              triangulation
+            </dt>
+            <dd class="col-12" lang="en" property="skos:definition">
+              <p>
+                The determination of a single data point from a minimum of three
+                sources.
+              </p>
+              <p>Example</p>
+              <ul>
+                <li>
+                  the median value of five central exchange results for ADA-USD
+                  constitutes a triangulated value.
+                </li>
+              </ul>
+            </dd>
+          </div>
 
-<div class="term-container" id="triangulatedDataPoint" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">triangulated data point</dt> <dd class="col-12" lang="en" property="skos:definition"><p> Noun
- The data resulting from the process of triangulation.
- </p>
-</dd> <dd class="col-12 mt" lang="en" property="skos:related"><a href="#triangulation">#triangulation</a></dd></div>
+          <div
+            class="term-container"
+            id="triangulatedDataPoint"
+            typeof="skos:Concept"
+          >
+            <dt class="col-12 mt" lang="en" property="skos:prefLabel">
+              triangulated data point
+            </dt>
+            <dd class="col-12" lang="en" property="skos:definition">
+              <p>Noun The data resulting from the process of triangulation.</p>
+            </dd>
+            <dd class="col-12 mt" lang="en" property="skos:related">
+              <a href="#triangulation">#triangulation</a>
+            </dd>
+          </div>
 
-<div class="term-container" id="trustless" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">trustless</dt> <dd class="col-12" lang="en" property="skos:definition"><p> A description given to a non-excludable system which does
- not require its users to rely upon or trust an
- intermediary.
- </p>
-</dd></div>
+          <div class="term-container" id="trustless" typeof="skos:Concept">
+            <dt class="col-12 mt" lang="en" property="skos:prefLabel">
+              trustless
+            </dt>
+            <dd class="col-12" lang="en" property="skos:definition">
+              <p>
+                A description given to a non-excludable system which does not
+                require its users to rely upon or trust an intermediary.
+              </p>
+            </dd>
+          </div>
 
-<div class="term-container" id="utxo" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">UTXO</dt> <dd class="col-12" lang="en" property="skos:definition"><p> Short for unspent transaction output, it is a fundamental
- entity in UTXO accounting blockchains such as Cardano. In
- such blockchains, a transaction specifies which UTXOs are
- input (ie spent) and defines new output UTXOs.</p>
-<p> To be a legitimate transaction all input UTXOs must have
- not been spent by another transaction.</p>
-<p> Apart from the genesis UTXO, all UTXOs are the output of
- previous transactions.
- </p>
-</dd></div>
+          <div class="term-container" id="utxo" typeof="skos:Concept">
+            <dt class="col-12 mt" lang="en" property="skos:prefLabel">UTXO</dt>
+            <dd class="col-12" lang="en" property="skos:definition">
+              <p>
+                Short for unspent transaction output, it is a fundamental entity
+                in UTXO accounting blockchains such as Cardano. In such
+                blockchains, a transaction specifies which UTXOs are input (ie
+                spent) and defines new output UTXOs.
+              </p>
+              <p>
+                To be a legitimate transaction all input UTXOs must have not
+                been spent by another transaction.
+              </p>
+              <p>
+                Apart from the genesis UTXO, all UTXOs are the output of
+                previous transactions.
+              </p>
+            </dd>
+          </div>
 
-<div class="term-container" id="validator" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">validator</dt> <dd class="col-12" lang="en" property="skos:definition"><p> Short for Orcfax validator node. A validator is a member
- of the consensus mechanism for Orcfax. Not to be confused
- with a Plutus validation script which, when the context is
- sufficiently clear, may also be referred to as a
- validator.
- </p>
-</dd></div>
+          <div class="term-container" id="validator" typeof="skos:Concept">
+            <dt class="col-12 mt" lang="en" property="skos:prefLabel">
+              validator
+            </dt>
+            <dd class="col-12" lang="en" property="skos:definition">
+              <p>
+                Short for Orcfax validator node. A validator is a member of the
+                consensus mechanism for Orcfax. Not to be confused with a Plutus
+                validation script which, when the context is sufficiently clear,
+                may also be referred to as a validator.
+              </p>
+            </dd>
+          </div>
 
-<div class="term-container" id="versionedFeedId" typeof="skos:Concept"><dt class="col-12 mt" lang="en" property="skos:prefLabel">versioned feed ID</dt> <dd class="col-12" lang="en" property="skos:definition"><p> The extension of the feed ID to contain version
- information.</p>
-<p> It is constructed as <code>{{feed-id}}/{{feed-version}}</code>
- or equivalently
- <code>{{feed-type}}/{{feed-name}}/{{feed-version}}</code>.
- </p>
-</dd></div>
-            </dl>
-        </div>
+          <div
+            class="term-container"
+            id="versionedFeedId"
+            typeof="skos:Concept"
+          >
+            <dt class="col-12 mt" lang="en" property="skos:prefLabel">
+              versioned feed ID
+            </dt>
+            <dd class="col-12" lang="en" property="skos:definition">
+              <p>
+                The extension of the feed ID to contain version information.
+              </p>
+              <p>
+                It is constructed as <code>{{feed-id}}/{{feed-version}}</code>
+                or equivalently
+                <code>{{feed-type}}/{{feed-name}}/{{feed-version}}</code>.
+              </p>
+            </dd>
+          </div>
+        </dl>
+      </div>
     </div>
-</body>
+  </body>
 </html>

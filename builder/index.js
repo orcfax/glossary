@@ -3,267 +3,254 @@
 import { readFileSync, promises } from "fs";
 import { basename, join } from "path";
 import * as commander from "commander";
-import { Parser } from 'n3';
-import * as marked from 'marked';
-import process from 'process';
+import { Parser } from "n3";
+import * as marked from "marked";
+import process from "process";
 
-const { Command } = commander
+const { Command } = commander;
 
-const BASE_URL = 'http://glossary.orcfax.io/#'
-const SKOS_PREFIX = "http://www.w3.org/2004/02/skos/core"
+const BASE_URL = "http://glossary.orcfax.io/#";
+const SKOS_PREFIX = "http://www.w3.org/2004/02/skos/core";
 
 function cli() {
-  let program = new Command()
+  let program = new Command();
   program
     .version("0.0.1")
     .description("build glossary")
-    .option("-i, --input <input>", "Input directory")
-  return program.parse()
+    .option("-i, --input <input>", "Input directory");
+  return program.parse();
 }
 
 async function app() {
   let opts = cli().opts();
   const parser = new Parser();
-  const entities = {}
+  const entities = {};
   for await (const fp of walk(opts.input)) {
     try {
-      entities[basename(fp, '.ttl')] = parseTtl(parser, fp)
+      entities[basename(fp, ".ttl")] = parseTtl(parser, fp);
     } catch (err) {
-      console.error(`ERROR IN THE FILE : ${fp}`)
-      throw err
+      console.error(`ERROR IN THE FILE : ${fp}`);
+      throw err;
     }
   }
-  const content = Object.entries(entities)
-  content.sort((x,y) =>  x[0].toLowerCase() > y[0].toLowerCase() ? 1 : -1 )
-  return htmlPage(content.map(tup => Concept.fromQuads(tup[0], tup[1]).html()))
+  const content = Object.entries(entities);
+  content.sort((x, y) => (x[0].toLowerCase() > y[0].toLowerCase() ? 1 : -1));
+  return htmlPage(
+    content.map((tup) => Concept.fromQuads(tup[0], tup[1]).html()),
+  );
 }
 
-
 class Concept {
-  _name
-  _prefLabel
-  _definition
-  _related
-  _additional
+  _name;
+  _prefLabel;
+  _definition;
+  _related;
+  _additional;
   constructor(name, prefLabel, definition, related, additional) {
-    this._name = name
-    this._prefLabel = prefLabel
-    this._definition = definition
-    this._related = related
-    this._additional = additional
+    this._name = name;
+    this._prefLabel = prefLabel;
+    this._definition = definition;
+    this._related = related;
+    this._additional = additional;
   }
   static fromQuads(name, quads) {
-    const prefLabelQuad = quads.find(PrefLabel.isQuad)
-    const definitionQuad = quads.find(Definition.isQuad)
-    const relatedQuads = quads.filter(Related.isQuad)
-    const additionalQuads = quads.filter(AdditionalSkos.isQuad)
+    const prefLabelQuad = quads.find(PrefLabel.isQuad);
+    const definitionQuad = quads.find(Definition.isQuad);
+    const relatedQuads = quads.filter(Related.isQuad);
+    const additionalQuads = quads.filter(AdditionalSkos.isQuad);
     return new Concept(
       name,
       PrefLabel.fromQuad(prefLabelQuad),
       Definition.fromQuad(definitionQuad),
       relatedQuads.map(Related.fromQuad),
       additionalQuads.map(AdditionalSkos.fromQuad),
-    )
+    );
   }
   attr() {
     return {
-      class:"term-container" ,
+      class: "term-container",
       id: this._name,
-      typeof:"skos:Concept",
-    }
+      typeof: "skos:Concept",
+    };
   }
-  html () {
+  html() {
     return div(
-      this.attr(), [
-        this._prefLabel.html(),
-        this._definition.html(),
-      ].concat(
-          this._related.map(x => x.html())
-        ).concat(
-          this._additional.map(x => x.html())
-
-        )
-    )
+      this.attr(),
+      [this._prefLabel.html(), this._definition.html()]
+        .concat(this._related.map((x) => x.html()))
+        .concat(this._additional.map((x) => x.html())),
+    );
   }
 }
 
 class PrefLabel {
-  static label="prefLabel"
-  _body
-  _lang
+  static label = "prefLabel";
+  _body;
+  _lang;
   constructor(body, lang) {
-    this._body = body
-    this._lang = lang
+    this._body = body;
+    this._lang = lang;
   }
 
   static isQuad(quad) {
-    return quad.predicate.id == `${SKOS_PREFIX}#${PrefLabel.label}`
+    return quad.predicate.id == `${SKOS_PREFIX}#${PrefLabel.label}`;
   }
 
   static fromQuad(quad) {
-    const body = quad.object.value
-    const lang = quad.object.lang
-    return new PrefLabel(body, lang)
+    const body = quad.object.value;
+    const lang = quad.object.lang;
+    return new PrefLabel(body, lang);
   }
 
   attr() {
     return {
-      class:"col-12 mt" ,
-      lang: (this._lang ? this._lang : "en"),
-      property:"skos:prefLabel",
-    }
+      class: "col-12 mt",
+      lang: this._lang ? this._lang : "en",
+      property: "skos:prefLabel",
+    };
   }
-  html () {
-    return dt(
-      this.attr(), [
-        this._body,
-        ]
-    )
+  html() {
+    return dt(this.attr(), [this._body]);
   }
 }
 
 class Definition {
-  static label="definition"
-  _body
-  _lang
+  static label = "definition";
+  _body;
+  _lang;
   constructor(body, lang) {
-    this._body = body
-    this._lang = lang
+    this._body = body;
+    this._lang = lang;
   }
 
   static isQuad(quad) {
-    return quad.predicate.id == `${SKOS_PREFIX}#${Definition.label}`
+    return quad.predicate.id == `${SKOS_PREFIX}#${Definition.label}`;
   }
 
   static fromQuad(quad) {
-    const body = quad.object.value
-    const lang = quad.object.lang
-    return new Definition(body, lang)
+    const body = quad.object.value;
+    const lang = quad.object.lang;
+    return new Definition(body, lang);
   }
 
   attr() {
     return {
-      class:"col-12" ,
-      lang: (this._lang ? this._lang : "en"),
-      property:"skos:definition",
-    }
+      class: "col-12",
+      lang: this._lang ? this._lang : "en",
+      property: "skos:definition",
+    };
   }
 
   md() {
-    return marked.parse(this._body.split('\n').map(x => x.trim()).join('\n '))
+    return marked.parse(
+      this._body
+        .split("\n")
+        .map((x) => x.trim())
+        .join("\n "),
+    );
   }
-  html () {
-    return dd(
-      this.attr(), [
-        this.md(),
-        ]
-    )
+  html() {
+    return dd(this.attr(), [this.md()]);
   }
 }
 
 class Related {
-  static label="related"
-  _target
-  _label
+  static label = "related";
+  _target;
+  _label;
 
   constructor(target, label) {
-    this._target = target
-    this._label = label
+    this._target = target;
+    this._label = label;
   }
 
   static isQuad(quad) {
-    return quad.predicate.id == `${SKOS_PREFIX}#${Related.label}`
+    return quad.predicate.id == `${SKOS_PREFIX}#${Related.label}`;
   }
 
   static fromQuad(quad) {
-    const body = quad.object.value
+    const body = quad.object.value;
     if (body.startsWith(BASE_URL)) {
-      const target = `#${body.split('#')[1]}` // Hack
-      return new Related(target, target)
+      const target = `#${body.split("#")[1]}`; // Hack
+      return new Related(target, target);
     }
-    const s = body.split('/')
-    return new Related(body, s[s.length - 1])
+    const s = body.split("/");
+    return new Related(body, s[s.length - 1]);
   }
 
   attr() {
     return {
-      class:"col-12 mt" ,
-      lang: (this._lang ? this._lang : "en"),
-      property:`skos:related`,
-    }
+      class: "col-12 mt",
+      lang: this._lang ? this._lang : "en",
+      property: `skos:related`,
+    };
   }
-  html () {
-    return dd(
-      this.attr(), [
-        a({ href : this._target}, this._label),
-        ]
-    )
+  html() {
+    return dd(this.attr(), [a({ href: this._target }, this._label)]);
   }
 }
 
 class AdditionalSkos {
-  _label
-  _body
-  _lang
+  _label;
+  _body;
+  _lang;
   constructor(label, body, lang) {
-    this._label = label
-    this._body = body
-    this._lang = lang
+    this._label = label;
+    this._body = body;
+    this._lang = lang;
   }
 
   static isQuad(quad) {
-    return quad.predicate.id.startsWith(SKOS_PREFIX) &&
-        (!PrefLabel.isQuad(quad)) &&
-        (!Related.isQuad(quad)) &&
-        (!Definition.isQuad(quad))
+    return (
+      quad.predicate.id.startsWith(SKOS_PREFIX) &&
+      !PrefLabel.isQuad(quad) &&
+      !Related.isQuad(quad) &&
+      !Definition.isQuad(quad)
+    );
   }
 
   static fromQuad(quad) {
-    const label = quad.predicate.value.split("#")[1]
-    const body = quad.object.value
-    const lang = quad.object.lang
-    return new AdditionalSkos(label, body, lang)
+    const label = quad.predicate.value.split("#")[1];
+    const body = quad.object.value;
+    const lang = quad.object.lang;
+    return new AdditionalSkos(label, body, lang);
   }
 
   attr() {
     return {
-      class:"col-12 alt-label" ,
-      lang: (this._lang ? this._lang : "en"),
-      property:`skos:${this._label}`,
-    }
+      class: "col-12 alt-label",
+      lang: this._lang ? this._lang : "en",
+      property: `skos:${this._label}`,
+    };
   }
-  html () {
-    return dd(
-      this.attr(), [
-        this._body,
-        ]
-    )
+  html() {
+    return dd(this.attr(), [this._body]);
   }
 }
 
 function parseTtl(parser, fp) {
-  return parser.parse(readFileSync(fp, 'utf8'))
+  return parser.parse(readFileSync(fp, "utf8"));
 }
 
 function attrOne2Str(tup) {
-  return `${tup[0]}="${tup[1].toString()}"`
+  return `${tup[0]}="${tup[1].toString()}"`;
 }
 
 function attr2Str(attr) {
-  return Object.entries(attr).map(attrOne2Str).join(" ")
+  return Object.entries(attr).map(attrOne2Str).join(" ");
 }
 
 function elem(tag) {
-  return  (attr, children) => {
-  const inner = (typeof children === "string") ? children : children.join(" ")
-  return `<${tag} ${attr2Str(attr)}>${inner}</${tag}>`
-  }
+  return (attr, children) => {
+    const inner = typeof children === "string" ? children : children.join(" ");
+    return `<${tag} ${attr2Str(attr)}>${inner}</${tag}>`;
+  };
 }
 
-const div = elem("div")
-const dt = elem("dt")
-const dd = elem("dd")
-const a = elem("a")
+const div = elem("div");
+const dt = elem("dt");
+const dd = elem("dd");
+const a = elem("a");
 
 async function* walk(dir) {
   for await (const d of await promises.opendir(dir)) {
@@ -272,7 +259,6 @@ async function* walk(dir) {
     else if (d.isFile()) yield entry;
   }
 }
-
 
 async function main() {
   process.exitCode = 1;
@@ -382,7 +368,7 @@ function htmlPage(content) {
       "@type": "CreativeWork",
       "additionalType": "Glossary",
       "name": "Orcfax Glossary",
-      "description": "This glossary contains terms and definitions for the entities and concepts in the Orcfax domain. Orcfax is an oracle software system that publishes data about real-world events to the Cardano blockchain network. This glossary is reference documentation that is intended to guide Orcfax design and development. That means the glossary terms must be comprehensive, unambiguous, as well as semantically and logically consistent with all other terms in the glossary.",
+      "description": "This glossary contains terms and definitions for the entities and concepts in the Orcfax domain. Orcfax is a blockchain oracle software system that publishes data about real-world events to the Cardano blockchain network. This glossary is reference documentation that is intended to guide Orcfax design and development. That means the glossary terms must be comprehensive, unambiguous, as well as semantically and logically consistent with all other terms in the glossary.",
       "author": {
         "@type": "Organization",
         "name": "Orcfax development team"
@@ -415,7 +401,7 @@ function htmlPage(content) {
     </div>
 </body>
 </html>
-`
+`;
 }
 
 main();
